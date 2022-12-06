@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.cdnfonts.com/css/clash-display');
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+
+:root {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #292929;
+  background-color: #fff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
