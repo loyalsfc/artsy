@@ -56,3 +56,13 @@
 .h-calc{
   height: calc(100vh - 109px);
 }
+
+.border-img{
+  background: linear-gradient(180deg, #78A3AD 0%, rgba(192, 86, 9, 0.49) 100%);
+}
+.text-gradient{
+  background: linear-gradient(94.97deg, #78A3AD 24.64%, rgba(192, 86, 9, 0.49) 118.54%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
