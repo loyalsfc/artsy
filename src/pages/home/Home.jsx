@@ -12,7 +12,6 @@ import Explore from './Explore'
 function Home() {
     return (
         <div>
-            <Header />
             <section>
                 <h1 className='mb-[30px] font-semibold font-clash text-center text-[80px] leading-[120%] max-w-[1068px] mx-auto'>Photography is poetry & <br/> beautiful untold stories</h1>
                 <p className='text-[1.25rem] text-center max-w-[926px] mx-auto leading-[120%]'>Flip through more than 10,000 vintage shots, old photograghs, historic <br/> images and captures seamlessly in one place. Register to get top access.</p>

@@ -18,7 +18,8 @@ module.exports = {
         rubik: ['Rubik', 'sans-serif']
       },
       boxShadow:{
-        '3xl': '7.77035px 7.77035px 11.6555px rgba(0, 0, 0, 0.15)'
+        '3xl': '7.77035px 7.77035px 11.6555px rgba(0, 0, 0, 0.15)',
+        '4xl': '4px 4px 64px rgba(0, 0, 0, 0.1)'
       }
     },
   },

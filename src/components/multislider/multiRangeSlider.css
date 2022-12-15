@@ -1,0 +1,97 @@
+
+  .slider {
+    position: relative;
+    width: 200px;
+  }
+  
+  .slider__track,
+  .slider__range,
+  .slider__left-value,
+  .slider__right-value {
+    position: absolute;
+  }
+  
+  .slider__track,
+  .slider__range {
+    height: 6px;
+  }
+  
+  .slider__track {
+    background-color: #B8BCB5;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .slider__range {
+    background-color: #333;
+    z-index: 2;
+  }
+  
+  .slider__left-value,
+  .slider__right-value {
+    color: #dee2e6;
+    font-size: 12px;
+    margin-top: 20px;
+    display: none;
+  }
+  
+  .slider__left-value {
+    left: 6px;
+  }
+  
+  .slider__right-value {
+    right: -4px;
+  }
+  
+  /* Removing the default appearance */
+  .thumb,
+  .thumb::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .thumb {
+    pointer-events: none;
+    position: absolute;
+    height: 0;
+    width: 200px;
+    outline: none;
+  }
+  
+  .thumb--left {
+    z-index: 3;
+  }
+  
+  .thumb--right {
+    z-index: 4;
+  }
+  
+  /* For Chrome browsers */
+  .thumb::-webkit-slider-thumb {
+    background-color: #333333;
+    border: 2px solid #333333;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+    margin-top: 4px;
+    pointer-events: all;
+    position: relative;
+  }
+  
+  /* For Firefox browsers */
+  .thumb::-moz-range-thumb {
+    background-color: #333333;
+    border: 2px solid #333333;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+    margin-top: 4px;
+    pointer-events: all;
+    position: relative;
+  }
+  
+.thumb--left::-webkit-slider-thumb {
+    background-color: #fff;
+}
