@@ -1,14 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Context } from '../../Context'
 import Recommended from './Recommended'
+import { toTitleCase } from '../../utils'
 
 function ProductItem() {
     const {productId} = useParams()
-    const {products} = useContext(Context)
+    const {products, setCart} = useContext(Context)
+    const [qty, setQty] = useState(1)
 
     const openProduct = products.find(item => item.id == productId)
-    console.log(openProduct);
 
     const recommendedItems = products.map((item, index)=>{
         if(index >= 10 && index <= 13){
@@ -23,22 +24,22 @@ function ProductItem() {
         }
     })
 
-    function toTitleCase(str) {
-        return str.replace(
-          /\w\S*/g,
-          function(txt) {
-            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-          }
-        );
-      }
+    const handleClick = (e) => {
+        const id = e.currentTarget.getAttribute('data-id')
+        const product = products.find(item => item.id == id)
+        product.qty = qty
+        setCart(prevCart => {
+            return [...prevCart, product]
+        })
+    }
 
-  return (
+    return (
         <div>
             <div className="container mx-auto">
                 <div className="max-w-[1064px] mx-auto">
                     <section className='font-medium leading-[200%] mb-10'>
                         <span className='text-[#BCB7B7]'>Home/ Marketplace/ Editorial/</span>
-                        <span className='text-black'> Philemona '22</span>
+                        <span className='text-black'>{openProduct && toTitleCase(openProduct.name)}</span>
                     </section>
 
                     <main className='border  border-grey flex text-grey leading-[97%]'>
@@ -60,12 +61,12 @@ function ProductItem() {
                                     <p className='mb-3 text-black'>{openProduct && toTitleCase(openProduct.origin)}</p>
                                     <p className='mb-4 text-black text-lg font-medium'>Total views: <span>{openProduct && openProduct.views}</span></p>
                                     <div className='mb-6 text-xl font-medium'>
-                                        <button className='mr-3'>-</button>
-                                        <span>1</span>
-                                        <button className='ml-3'>+</button>
+                                        <button onClick={()=> setQty(prevValue => prevValue-1)} className='mr-3'>-</button>
+                                        <span className='w-4 inline-block text-center'>{qty}</span>
+                                        <button onClick={()=> setQty(prevValue => prevValue+1)} className='ml-3'>+</button>
                                     </div>
                                     <div className='flex'>
-                                        <button className='bg-[#3341C1] rounded-[3px] px-8 h-[3.5rem] flex items-center text-white font-medium'>
+                                        <button onClick={handleClick} data-id={`${openProduct && openProduct.id}`} className='bg-blue rounded-[3px] px-8 h-[3.5rem] flex items-center text-white font-medium'>
                                             <span>Add to Cart</span>
                                             <svg width="42" height="34" viewBox="0 0 42 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path fillRule="evenodd" clipRule="evenodd" d="M10 16.7403C10 16.5417 10.079 16.3512 10.2197 16.2108C10.3603 16.0703 10.5511 15.9914 10.75 15.9914H28.4395L23.719 11.2799C23.5782 11.1393 23.4991 10.9486 23.4991 10.7498C23.4991 10.5509 23.5782 10.3602 23.719 10.2196C23.8598 10.079 24.0508 10 24.25 10C24.4492 10 24.6402 10.079 24.781 10.2196L30.781 16.2101C30.8508 16.2797 30.9063 16.3623 30.9441 16.4533C30.9819 16.5442 31.0013 16.6418 31.0013 16.7403C31.0013 16.8388 30.9819 16.9363 30.9441 17.0273C30.9063 17.1182 30.8508 17.2009 30.781 17.2704L24.781 23.2609C24.6402 23.4015 24.4492 23.4805 24.25 23.4805C24.0508 23.4805 23.8598 23.4015 23.719 23.2609C23.5782 23.1203 23.4991 22.9296 23.4991 22.7308C23.4991 22.5319 23.5782 22.3412 23.719 22.2006L28.4395 17.4891H10.75C10.5511 17.4891 10.3603 17.4102 10.2197 17.2697C10.079 17.1293 10 16.9389 10 16.7403Z" fill="#F5F4F4"/>

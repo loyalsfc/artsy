@@ -97,7 +97,7 @@ function Home() {
                             <h2 className='font-semibold text-[55px] leading-[155%] text-[#161616] max-w-[535px]'>TOP CREATORS OF THE WEEK</h2>
                             <div className='flex'>
                                 <div className='h-[] rounded-full w-2.5 bg-[#AEAEAE] border mr-[34px] overflow-hidden flex items-end'>
-                                    <div className="w-full h-1/5 bg-[#292929] rounded-full"></div>
+                                    <div className="w-full h-1/5 bg-grey-dark rounded-full"></div>
                                 </div>
                                 <ul className='text-grey text-[2.5rem] leading-[155%] mr-8'>
                                     <li className='mb-5'>Editorial</li>
@@ -133,7 +133,7 @@ function Home() {
             
             <footer>
                 <div className="container mx-auto text-[26px] leading-[35px] text-[#333333] flex justify-between">
-                    <h1 className='font-clash font-semibold leading-[59px] text-[#292929] text-[3rem] flex items-center'>ARTSY.</h1>
+                    <h1 className='font-clash font-semibold leading-[59px] text-grey-dark text-[3rem] flex items-center'>ARTSY.</h1>
                     <ul className=''>
                         <li className='mb-[33px] last:mb-0'>Home</li>
                         <li className='mb-[33px] last:mb-0'>Market Place</li>

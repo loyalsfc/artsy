@@ -13,7 +13,7 @@ function CatTitle({title}) {
 
 function CheckBox({id, title}){
     return(
-        <div className='text-lg text-[#292929]'>
+        <div className='text-lg text-grey-dark'>
             <input type="checkbox" name={id} id={id} className='mr-4'/>
             <label htmlFor={id}>{title}</label>
         </div>

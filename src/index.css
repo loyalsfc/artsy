@@ -25,7 +25,7 @@
   display: none;
 }
 
-@layer component{
+@layer utilities{
   .nav{
     @apply mr-[47px] last:mr-0 text-2xl leading-8 inline-block
   }
@@ -34,6 +34,15 @@
   }
   .rounded-btn{
     @apply flex items-center justify-center bg-white/[0.2] h-[69.71px] w-[69.71px] rounded-full backdrop-blur-[7.77035px]
+  }
+  .cart-btn{
+    @apply text-[#888888] text-lg py-2 border-b-[0.5px] border-b-[#747474]  w-1/3
+  }
+  .active-cart-btn{
+    @apply border-b-[#2F4333] border-b-2 text-[#292929] font-medium
+  }
+  .inputStyle{
+    @apply text-grey-light focus:outline-0 bg-[#F2F2F2] border border-[0.5px] border-[#747474] rounded-[10px] py-3 px-5 mt-2 w-full
   }
 }
 
@@ -65,4 +74,22 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+.rotate-anim{
+  animation: rotate 1s infinite linear;
+}
+
+.rotate-anim1{
+  animation: rotate2 1s infinite linear;
+}
+
+
+@keyframes rotate {
+  0%{transform: rotate(0deg)}
+  100%{transform: rotate(360deg)}
+}
+
+@keyframes rotate2 {
+  0%{transform: rotate(360deg)}
+  100%{transform: rotate(0deg)}
 }

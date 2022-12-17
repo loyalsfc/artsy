@@ -7,7 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        grey: '#333333'
+        grey: '#333333',
+        blue: '#3341C1',
+        'grey-light': '#888888',
+        'grey-dark': '#292929'
       },
       fontFamily:{
         clash: ['Clash Display', 'sans-serif'],    
@@ -15,7 +18,8 @@ module.exports = {
         bellefair: ['Bellefair', 'serif'],
         poppin: ['Poppins', 'sans-serif'],
         baskerville: ['Baskervville', 'serif'],
-        rubik: ['Rubik', 'sans-serif']
+        rubik: ['Rubik', 'sans-serif'],
+        cardo: ['Cardo', 'serif']
       },
       boxShadow:{
         '3xl': '7.77035px 7.77035px 11.6555px rgba(0, 0, 0, 0.15)',

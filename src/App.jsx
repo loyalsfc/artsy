@@ -6,6 +6,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductPage from './pages/productpage/ProductPage';
 import Header from './components/header/Header';
 import ProductItem from './pages/ProductItemPage/ProductItem';
+import Cart from './pages/cart/Cart';
+import CartShippingDetails from './pages/cart/CartShippingDetails';
+import PaymentCheckout from './pages/cart/PaymentCheckout';
 
 function App() {
 
@@ -17,6 +20,9 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/marketplace' element={<ProductPage />} />
           <Route path='/marketplace/:productId' element={<ProductItem />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/shipping-details' element={<CartShippingDetails />} />
+          <Route path='/checkout' element={<PaymentCheckout />} />
         </Routes>
       </Router>
     </ContextProvider>

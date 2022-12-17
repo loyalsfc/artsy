@@ -4,15 +4,24 @@ const Context = React.createContext();
 function ContextProvider({children}){
     const url = 'https://gist.githubusercontent.com/eniiku/65a95533de1f005eee35d5eb91f3e141/raw/439bc2dd8693b490539eae236918f4a53dd17457/products.json'
     const [products, setProducts] = useState([])
+    const [cart, setCart] = useState([])
 
     useEffect(()=>{
+        setCart(JSON.parse(localStorage.getItem('cart')))
+
         fetch(url)
         .then(result => result.json())
         .then(data =>setProducts(data.products))    
     },[])
 
+    useEffect(()=>{
+        // localStorage.setItem('cart', JSON.stringify(cart))  
+    },[cart])
+
+    console.log(cart)
+
     return(
-        <Context.Provider value={{products}}>
+        <Context.Provider value={{products, cart, setCart}}>
             {children}
         </Context.Provider>
     )
