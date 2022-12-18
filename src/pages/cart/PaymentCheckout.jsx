@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { Context } from '../../Context'
 import InputWrapper from './InputWrapper'
-
+import { Link, useNavigate,  } from 'react-router-dom'
 import Phantom from '../../assets/wallets/Phantom.png'
 import WalletConnect from '../../assets/wallets/WalletConnect.png'
 import Coinbase from '../../assets/wallets/Coinbase.png'
@@ -9,6 +9,9 @@ import MetaMask from '../../assets/wallets/MetaMask.png'
 import Loader from '../../components/loader/Loader'
 
 function PaymentCheckout() {
+    const navigate = useNavigate()
+    const {setCart} = useContext(Context)
+
     const [formData, setFormData] = useState({
         saveWallet: false,
         walletType: '',
@@ -26,8 +29,11 @@ function PaymentCheckout() {
     }, [])
 
     function handleSubmit(e){
-        e.preventDefault();
+        e.preventDefault()
         setPaymentConfirm(true)
+        setCart([])
+        setTimeout(()=>{navigate('/checkout-success')}, 5000)
+
     }
 
     function handleChange(e){
@@ -78,7 +84,7 @@ function PaymentCheckout() {
 
                                 <InputWrapper>
                                     <label htmlFor="walletType">Choose a wallet</label>
-                                    <select name="walletType" id="walletType" onChange={handleChange} value={formData.walletType} className='inputStyle'>
+                                    <select name="walletType" id="walletType" required onChange={handleChange} value={formData.walletType} className='inputStyle'>
                                         <option value=""></option>
                                         <option value="metamask">Metamask</option>
                                         <option value="coinbase">Coinbase</option>
@@ -95,8 +101,9 @@ function PaymentCheckout() {
                                             id="walletKey" 
                                             value={formData.walletKey}
                                             onChange={handleChange}
-                                            className="bg-transparent w-full"
+                                            className="bg-transparent w-full focus:outline-0"
                                             placeholder='Please enter your key'
+                                            required
                                         />
                                         <img src={Phantom} alt="" className='h-8'/>
                                     </div>
@@ -111,7 +118,7 @@ function PaymentCheckout() {
                         <aside className='w-1/2 p-8'>
                             <h3 className='text-grey-dark text-lg font-medium border-b border-b-[0.3px] pb-6 border-b-[#747474]'>Payment Summary</h3>
                             <article className='py-8 border-b-[0.3px] border-b-[#747474]'>
-                                <p className='text-grey-dark'>Metamask wallet : 002345KJi90pzzz3</p>
+                                <p className='text-grey-dark'>Metamask wallet : {formData.walletKey}</p>
                                 <p className='text-sm text-[#616161] mt-4'>Actively linked to Yaba, Lagos Nigeria.</p>
                             </article>
                             <article className='leading-[150%] text-grey-dark leading-[157%] py-6 border-b-[0.3px] border-b-[#747474]'>

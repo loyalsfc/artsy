@@ -6,8 +6,8 @@ import Featured from './Featured'
 import featured1 from '../../assets/featured/Featured-product-1.png'
 import featured2 from '../../assets/featured/Featured-product-2.png'
 import featured3 from '../../assets/featured/Featured-product-3.png'
-import image from '../../assets/carousel-second/image1.png'
 import Explore from './Explore'
+import FadeIn from './FadeIn'
 
 function Home() {
     return (
@@ -87,8 +87,8 @@ function Home() {
                 </section>
                 
                 <section className='mb-[180px]'>
-                    <Explore content="Explore marketplace" />
-                    <Explore content="See auctions" />
+                    <Explore content="Explore marketplace" link="/marketplace"/>
+                    <Explore content="See auctions" link='/auctions'/>
                 </section>
 
                 <section className='bg-[#e2e2e2] mb-[147px]'>
@@ -111,9 +111,7 @@ function Home() {
                             <span className="text-grey text-[3rem] leading-[155%] font-bold absolute bottom-8 right-8">CIRCA</span>
                         </p>
                         <div className='flex my-[75px]'><p className='ml-auto mr-8 font-bold text-[170px] text-[#161616] leading-[150px] line-through decoration-8'>1985</p></div>
-                        <div className="absolute -bottom-[56.75px] right-28 w-[826px] h-[835px] max-w-[100%] bg-black/[0.04]">
-                            <img src={image} alt="" />
-                        </div>
+                        <FadeIn />
                     </div>
                 </section>
 

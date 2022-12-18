@@ -4,7 +4,7 @@ import { Context } from '../../Context'
 import CartItem from './CartItem'
 
 
-function CartCheckout({hidden}) {
+function CartCheckout({hidden, width}) {
     const {cart, setCart} = useContext(Context)
     const [totalPrice, setTotalPrice] = useState(0)
 
@@ -78,14 +78,16 @@ function CartCheckout({hidden}) {
             </section>
             <section className='flex gap-12 justify-between'>
                 <div className={'flex flex-col justify-center item-center w-2/5 pr-24 ' + hidden}>
-                    <Link to="/shipping-details" className='block'>
-                        <button className='bg-blue h-[3.5rem] px-8 text-xl mb-5 font-medium text-white block'>Proceed to checkout</button>
-                    </Link>
+                    {/*  className='block w-full'> */}
+                        <button className='bg-blue h-[3.5rem] px-8 text-xl mb-5 font-medium text-white block'>
+                            <Link to="/shipping-details" className='block h-full flex items-center justify-center w-full'>Proceed to checkout</Link>
+                        </button>
+                    {/* </Link> */}
                     <Link to="/marketplace">
                         <span className='text-center  block text-lg underline text-[#006CA2]'>Continue Shopping</span>
                     </Link>
                 </div>
-                <article className='text-lg flex flex-col gap-6 leading-[100%] w-2/5'>
+                <article className={'text-lg flex flex-col gap-6 leading-[100%] ' + width}>
                     <p className='text-grey-light flex'><span>Products in cart :</span> <span className='text-grey-dark ml-auto'>{cart.length} item{cart.length > 1 ? 's' : ''}</span></p>
                     <p className='text-grey-light flex'><span>Shipping :</span> <span className='text-grey-dark ml-auto'>${(totalPrice * 0.1).toFixed(2)}</span></p>
                     <p className='text-grey-light flex'><span>Total :</span> <span className='text-grey-dark ml-auto'>${(totalPrice + totalPrice * 0.1).toFixed(2)}</span></p>

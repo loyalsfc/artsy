@@ -9,6 +9,7 @@ import ProductItem from './pages/ProductItemPage/ProductItem';
 import Cart from './pages/cart/Cart';
 import CartShippingDetails from './pages/cart/CartShippingDetails';
 import PaymentCheckout from './pages/cart/PaymentCheckout';
+import Confirmation from './pages/confirmpage/Confirmation';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/shipping-details' element={<CartShippingDetails />} />
           <Route path='/checkout' element={<PaymentCheckout />} />
+          <Route path='/checkout-success' element={<Confirmation />} />
         </Routes>
       </Router>
     </ContextProvider>

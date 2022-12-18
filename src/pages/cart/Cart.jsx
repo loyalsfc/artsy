@@ -11,7 +11,7 @@ function Cart() {
         <main className='pb-10'>
             <div className="container mx-auto">
                 <div className="max-w-[1064px] mx-auto">
-                    {cart.length ? <CartCheckout /> : <EmptyCart />}
+                    {cart.length ? <CartCheckout width='w-2/5' /> : <EmptyCart />}
                 </div>
             </div>
         </main>

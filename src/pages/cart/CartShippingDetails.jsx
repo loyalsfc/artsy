@@ -52,6 +52,7 @@ function CartShippingDetails() {
                             value={formData.email}
                             onChange={handleChange}
                             className="inputStyle"
+                            required
                         />
                         <input type="checkbox" name="checkbox" id="checkbox" value={formData.checkbox} onChange={handleSwitch} />
                         <label htmlFor="checkbox" className='text-sm ml-3 mt-3 inline-block'>Get updates about new drops & exclusive offers</label>
@@ -65,11 +66,12 @@ function CartShippingDetails() {
                             value={formData.name}
                             onChange={handleChange}
                             className="inputStyle"
+                            required
                         />
                     </InputWrapper>
                     <InputWrapper>
                         <label htmlFor="wallet">Choose a wallet</label>
-                        <select name="wallet" id="wallet" onChange={handleChange} value={formData.wallet} className='inputStyle'>
+                        <select name="wallet" id="wallet" required onChange={handleChange} value={formData.wallet} className='inputStyle'>
                             <option value=""></option>
                             <option value="metamask">Metamask</option>
                             <option value="coinbase">Coinbase</option>
@@ -86,12 +88,13 @@ function CartShippingDetails() {
                             value={formData.city}
                             onChange={handleChange}
                             className="inputStyle"
+                            required
                         />
                     </InputWrapper>
                     <div className='flex items-center mt-8 gap-8'>
                         <InputWrapper>
                             <label htmlFor="country">Country</label>
-                            <select name="country" id="country" onChange={handleChange} value={formData.country} className='inputStyle'>
+                            <select name="country" id="country" required onChange={handleChange} value={formData.country} className='inputStyle'>
                                 <option value=""></option>
                                 <option value="Afghanistan">Afghanistan</option>
                                 <option value="Åland Islands">Åland Islands</option>
@@ -348,6 +351,7 @@ function CartShippingDetails() {
                                 value={formData.postcode}
                                 onChange={handleChange}
                                 className="inputStyle"
+                                required
                             />
                         </InputWrapper>
                     </div>
@@ -360,12 +364,13 @@ function CartShippingDetails() {
                             value={formData.number}
                             onChange={handleChange}
                             className="inputStyle"
+                            required
                         />
                     </InputWrapper>
                     <button className='block w-full bg-blue text-xl text-white mt-8 h-[3.5rem]'>Proceed to payment</button>
                 </form>
                 <div>
-                    <CartCheckout hidden='hidden'/>
+                    <CartCheckout hidden='hidden' width="w-full"/>
                 </div>
             </main>
         </div>
