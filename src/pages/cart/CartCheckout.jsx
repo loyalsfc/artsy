@@ -1,12 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Context } from '../../Context'
 import CartItem from './CartItem'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import Modal from '../../components/modal/Modal'
 
 
 function CartCheckout({hidden, width}) {
+    const [modalIsOpen, setModalIsOpen] = useState(false)
     const {cart, setCart} = useContext(Context)
     const [totalPrice, setTotalPrice] = useState(0)
+    const [deleteId, setDeleteId ]= useState('')
 
     useEffect(()=>{
         setTotalPrice(0)
@@ -33,8 +38,9 @@ function CartCheckout({hidden, width}) {
         )
     })
 
-    function removeCart(id){
-        setCart(cart.filter(item => item.id != id))
+    async function removeCart(id){
+        setModalIsOpen(!modalIsOpen)
+        setDeleteId(id)
     }
 
     function increaseQty(id){
@@ -66,8 +72,27 @@ function CartCheckout({hidden, width}) {
         )
     }
 
+    const confirmCartRemove = () => {
+        setCart(cart.filter(item => item.id != deleteId))
+        toast("Product Removed Successfully!", {type: 'success', className: 'w-full'})
+        setModalIsOpen(false)
+    }
+
+    const toggleModal = () => {
+        setModalIsOpen(!modalIsOpen)
+    }
+
     return (
         <>
+            <ToastContainer />
+            <Modal isOpen={modalIsOpen} onRequestClose={toggleModal}>
+                <div className='flex my-2'>
+                    <button onClick={toggleModal} className='h-[3.5rem] px-8 flex items-center border-2 border-grey-dark mr-4'>SAVE FOR LATER</button>
+                    <button onClick={confirmCartRemove} className='bg-grey-dark text-white h-[3.5rem] px-8 flex items-center'>
+                        <span>REMOVE ITEM</span>
+                    </button>
+                </div>
+            </Modal>
             <div className={'w-3/5 mx-auto mt-5 mb-8 ' + hidden}>
                 <button className='cart-btn active-cart-btn'>Shopping cart</button>
                 <button className='cart-btn'>Shipping details</button>

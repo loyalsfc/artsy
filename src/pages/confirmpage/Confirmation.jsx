@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import illustration1 from '../../assets/Illustration1.png'
 import illustration2 from '../../assets/Illustration2.png'
+import { Context } from '../../Context'
 
 
 function Confirmation() {
-  return (
+    const {name} = useContext(Context)
+    return (
         <main>
             <div className="container mx-auto">
                 <div className={`max-w-[1064px] mx-auto pb-8`}>
@@ -26,7 +28,7 @@ function Confirmation() {
                         <img src={illustration1} alt="" className='h-full block mx-auto' />
                     </div>
                     <article className='text-black text-center leading-[156%]'>
-                        <h4 className='my-4 font-medium text-[1.5rem] '>Hey Celestina, thank you for your purchase.</h4>
+                        <h4 className='my-4 font-medium text-[1.5rem] '>Hey {name.split(' ')[0]}, thank you for your purchase.</h4>
                         <p className='text-xl flex items-end justify-center'>You are amazing. Cheers to being ARTSY! <img src={illustration2} alt="" className='h-10'/></p>
                     </article>
                 </div>  

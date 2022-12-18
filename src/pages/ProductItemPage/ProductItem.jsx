@@ -3,13 +3,14 @@ import { Link, useParams } from 'react-router-dom'
 import { Context } from '../../Context'
 import Recommended from './Recommended'
 import { toTitleCase } from '../../utils'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function ProductItem() {
     const {productId} = useParams()
     const {products, setCart, cart} = useContext(Context)
     const [qty, setQty] = useState(1)
     const [disableButton, setDisableButton] = useState(false)
-
     
     const openProduct = products.find(item => item.id == productId)
 
@@ -40,10 +41,12 @@ function ProductItem() {
             return [...prevCart, product]
         })
         setDisableButton(true)
+        toast("Product Added Successfuly!", {type: 'success'});
     }
 
     return (
         <div>
+            <ToastContainer />
             <div className="container mx-auto">
                 <div className="max-w-[1064px] mx-auto">
                     <section className='font-medium leading-[200%] mb-10'>
