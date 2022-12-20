@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Context } from '../../Context';
 
 import CartCheckout from './CartCheckout';
@@ -38,14 +38,15 @@ function CartShippingDetails() {
     }
 
     return (
-        <div className={`max-w-[1064px] mx-auto pb-8`}>
-            <div className='w-3/5 mx-auto mb-8'>
-                <button className='cart-btn'>Shopping cart</button>
+        <div className={`max-w-[1064px] px-4 md:px-0 mx-auto pb-8`}>
+            <p className='font-medium text-[#BCB7B7] md:hidden mb-8'>Home/ Marketplace/ Cart/ <span className='text-grey'>Shipping</span></p>
+            <div className='w-3/5 mx-auto mb-8 hidden md:block'>
+                <Link to="/cart"><button className='cart-btn'>Shopping cart</button></Link>
                 <button className='cart-btn active-cart-btn'>Shipping details</button>
                 <button className='cart-btn'>Payment details</button>
             </div>
             <main className='flex gap-24'>
-                <form onSubmit={handleSubmit} className="w-1/2">
+                <form onSubmit={handleSubmit} className="md:w-1/2">
                     <InputWrapper>
                         <label htmlFor="email">Your email</label>
                         <input 
@@ -94,7 +95,7 @@ function CartShippingDetails() {
                             required
                         />
                     </InputWrapper>
-                    <div className='flex items-center mt-8 gap-8'>
+                    <div className='flex items-center mt-8 gap-4 md:gap-8'>
                         <InputWrapper>
                             <label htmlFor="country">Country</label>
                             <select name="country" id="country" required onChange={handleChange} value={formData.country} className='inputStyle'>
@@ -371,8 +372,9 @@ function CartShippingDetails() {
                         />
                     </InputWrapper>
                     <button className='block w-full bg-blue text-xl text-white mt-8 h-[3.5rem]'>Proceed to payment</button>
+                    <Link to="/cart" className='md:hidden'><span className='text-lg underline text-[#006CA2] block text-center my-7'>Go Back to cart</span></Link>
                 </form>
-                <div>
+                <div className='hidden md:block'>
                     <CartCheckout hidden='hidden' width="w-full"/>
                 </div>
             </main>

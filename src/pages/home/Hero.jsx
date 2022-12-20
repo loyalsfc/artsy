@@ -6,7 +6,7 @@ import image5 from '../../assets/carouselImage/Homepage-carousel-WEB-4.png'
 function Hero() {
             
     return (
-        <div className='grid grid-cols-5 gap-[18px] content-center  border-red-500 w-max mt-[50px] mb-[162px]'>
+        <div className='hidden md:grid grid-cols-5 gap-[18px] content-center  border-red-500 w-max mt-[50px] mb-[162px]'>
             <CarouselItem url={image1} />
             <CarouselItem url={image2} />
             <CarouselItem url={image3} />

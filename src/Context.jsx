@@ -5,6 +5,7 @@ function ContextProvider({children}){
     const url = 'https://gist.githubusercontent.com/eniiku/65a95533de1f005eee35d5eb91f3e141/raw/439bc2dd8693b490539eae236918f4a53dd17457/products.json'
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([])
+    const [favorite, setFavorite] = useState([])
     const [name, setName] = useState('')
 
     useEffect(()=>{
@@ -15,14 +16,25 @@ function ContextProvider({children}){
         .then(data =>setProducts(data.products))    
     },[])
 
+    const toggleFavorite = (id) => {
+        let product = products.find(item => item.id == id)
+        setFavorite(prevItem => {
+            if(favorite.some(item => item.id == id)){
+                return favorite.filter(item => item.id != id)
+            } else {
+                return [...prevItem, product]
+            }
+        })
+    }
+
+    console.log(favorite)
+
     useEffect(()=>{
         // localStorage.setItem('cart', JSON.stringify(cart))  
     },[cart])
 
-    // console.log(cart)    
-
     return(
-        <Context.Provider value={{products, cart, setCart, name, setName}}>
+        <Context.Provider value={{products, cart, setCart, name, setName, toggleFavorite, favorite}}>
             {children}
         </Context.Provider>
     )

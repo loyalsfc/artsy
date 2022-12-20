@@ -32,7 +32,7 @@ function FadeIn() {
     }, [counter])
 
     return (
-        <div className="absolute -bottom-[56.75px] right-28 w-[826px] h-[835px] max-w-[100%] bg-black/[0.04]">
+        <div className="absolute -bottom-[37px] md:-bottom-[56.75px] right-[67px] md:right-28 w-[237.2px] md:w-[826px] h-[240px] md:h-[835px] max-w-[100%] bg-black/[0.04]">
             <img src={image3} ref={imageRef3} alt="" className='carouselSlider absolute bottom-0 transition-all duration-1000 opacity-0'/>
             <img src={image2} ref={imageRef2} alt="" className='carouselSlider absolute bottom-0 transition-all duration-1000 opacity-0'/>
             <img src={image1} ref={imageRef1} alt="" className='carouselSlider absolute bottom-0 transition-all duration-1000 '/>

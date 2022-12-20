@@ -44,6 +44,12 @@
   .inputStyle{
     @apply text-grey-light focus:outline-0 bg-[#F2F2F2] border border-[0.5px] border-[#747474] rounded-[10px] py-3 px-5 mt-2 w-full
   }
+  .blurBox{
+    @apply h-[35px] w-[35px] rounded-full blur-[12.5px] -z-10 absolute
+  }
+  .mobile-nav{
+    @apply text-[1.5rem] leading-[52px] text-grey font-medium my-[9px]
+  }
 }
 
 .overflow-x-scroll::-webkit-scrollbar{
@@ -83,6 +89,9 @@
   animation: rotate2 1s infinite linear;
 }
 
+.w-0{
+  width: 0 !important;
+}
 
 @keyframes rotate {
   0%{transform: rotate(0deg)}
