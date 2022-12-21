@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import Header from '../../components/header/Header';
 import { Context } from '../../Context';
 
 import CartCheckout from './CartCheckout';
@@ -39,6 +40,7 @@ function CartShippingDetails() {
 
     return (
         <div className={`max-w-[1064px] px-4 md:px-0 mx-auto pb-8`}>
+            <Header />
             <p className='font-medium text-[#BCB7B7] md:hidden mb-8'>Home/ Marketplace/ Cart/ <span className='text-grey'>Shipping</span></p>
             <div className='w-3/5 mx-auto mb-8 hidden md:block'>
                 <Link to="/cart"><button className='cart-btn'>Shopping cart</button></Link>

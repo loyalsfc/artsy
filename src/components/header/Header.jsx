@@ -27,7 +27,7 @@ function Header() {
             <ul className='px-[30px]'>
                 <li onClick={toggleNav} data-id="home" className='mobile-nav'><Link to="/">Home</Link></li>
                 <li onClick={toggleNav} data-id="marketplace" className='mobile-nav'><Link to="/marketplace">Marketplace</Link></li>
-                <li onClick={toggleNav} data-id="auctions" className='mobile-nav'>Aunctions</li>
+                <li onClick={toggleNav} data-id="auctions" className='mobile-nav'><Link to="/auctions">Aunctions</Link></li>
                 <li onClick={toggleNav} data-id="drop" className='mobile-nav'>Drop</li>
             </ul>
         </div>
@@ -46,7 +46,7 @@ function Header() {
                         <ul className='nav-items'>
                             <li onClick={()=>switchActive('home')} id="home" className='nav active'><Link to="/">Home</Link></li>
                             <li onClick={()=>switchActive('marketplace')} id="marketplace" className='nav'><Link to="/marketplace">Marketplace</Link></li>
-                            <li onClick={()=>switchActive('auctions')} id="auctions" className='nav'>Aunctions</li>
+                            <li onClick={()=>switchActive('auctions')} id="auctions" className='nav'><Link to="/auctions">Aunctions</Link></li>
                             <li onClick={()=>switchActive('drop')} id="drop" className='nav'>Drop</li>
                         </ul>
                     </nav>

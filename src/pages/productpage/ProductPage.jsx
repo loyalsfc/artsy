@@ -6,6 +6,8 @@ import SideNav from './SideNav'
 
 function ProductPage() {
     return (
+    <>
+        <Header />
         <div className='md:mt-5'>
             <div className='container mx-auto flex h-calc overflow-y-scroll'>
                 <SideNav />
@@ -29,6 +31,7 @@ function ProductPage() {
             </div>
             <Footer className="md:hidden"/>
         </div>
+    </>
     )
 }
 

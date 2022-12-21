@@ -6,6 +6,7 @@ import { toTitleCase } from '../../utils'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import SwiperItem from '../../components/swiper/Swiper'
+import Header from '../../components/header/Header'
 
 function ProductItem() {
     const {productId} = useParams()
@@ -52,6 +53,7 @@ function ProductItem() {
     return (
         <div>
             <ToastContainer />
+            <Header />
             <div className="container mx-auto px-4 md:px-0 pb-20 md:mb-0">
                 <div className="max-w-[1064px] mx-auto">
                     <section className='font-medium md:leading-[200%] mb-8 md:mb-10 border-b-[0.5px] md:border-b-0 border-b-grey leading-[52px]'>

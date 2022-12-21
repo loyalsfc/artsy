@@ -102,3 +102,11 @@
   0%{transform: rotate(360deg)}
   100%{transform: rotate(0deg)}
 }
+
+.auction-card-wrapper:hover .auction-card{
+  width: 80% !important;
+  height: 90% !important;
+}
+.auction-card-wrapper:hover .auction-join{
+  opacity: 1 !important;
+}

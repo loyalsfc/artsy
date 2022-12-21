@@ -10,13 +10,14 @@ import Cart from './pages/cart/Cart';
 import CartShippingDetails from './pages/cart/CartShippingDetails';
 import PaymentCheckout from './pages/cart/PaymentCheckout';
 import Confirmation from './pages/confirmpage/Confirmation';
+import Auctions from './pages/auctions/Auctions';
+import Livebid from './pages/livebid/Livebid';
 
 function App() {
 
   return (
     <ContextProvider>
       <Router>
-        <Header />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/marketplace' element={<ProductPage />} />
@@ -25,6 +26,8 @@ function App() {
           <Route path='/shipping-details' element={<CartShippingDetails />} />
           <Route path='/checkout' element={<PaymentCheckout />} />
           <Route path='/checkout-success' element={<Confirmation />} />
+          <Route path='/auctions' element={<Auctions />} />
+          <Route path='/live-bid/:productId' element={<Livebid />} />
         </Routes>
       </Router>
     </ContextProvider>
