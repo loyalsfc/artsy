@@ -47,7 +47,7 @@ function Header() {
                             <li onClick={()=>switchActive('home')} id="home" className='nav active'><Link to="/">Home</Link></li>
                             <li onClick={()=>switchActive('marketplace')} id="marketplace" className='nav'><Link to="/marketplace">Marketplace</Link></li>
                             <li onClick={()=>switchActive('auctions')} id="auctions" className='nav'><Link to="/auctions">Aunctions</Link></li>
-                            <li onClick={()=>switchActive('drop')} id="drop" className='nav'>Drop</li>
+                            <li onClick={()=>switchActive('drop')} id="drop" className='nav'><Link to="drop">Drop</Link></li>
                         </ul>
                     </nav>
                     <div className='flex'>

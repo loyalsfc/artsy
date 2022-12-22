@@ -93,6 +93,10 @@
   width: 0 !important;
 }
 
+.lightbg{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(245, 244, 244, 0.24);
+}
+
 @keyframes rotate {
   0%{transform: rotate(0deg)}
   100%{transform: rotate(360deg)}

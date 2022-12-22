@@ -12,6 +12,7 @@ import PaymentCheckout from './pages/cart/PaymentCheckout';
 import Confirmation from './pages/confirmpage/Confirmation';
 import Auctions from './pages/auctions/Auctions';
 import Livebid from './pages/livebid/Livebid';
+import Drop from './pages/drop/Drop';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/checkout-success' element={<Confirmation />} />
           <Route path='/auctions' element={<Auctions />} />
           <Route path='/live-bid/:productId' element={<Livebid />} />
+          <Route path='/drop' element={<Drop />} />
         </Routes>
       </Router>
     </ContextProvider>
