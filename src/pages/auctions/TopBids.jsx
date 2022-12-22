@@ -36,7 +36,7 @@ function TopBids({img, title, creator, date, highestbid, currentbid, isFavorite,
                         <span className='text-[#616161]'>Current Bid</span>
                         <span className='text-black'>{currentbid}</span>
                     </h5>
-                    <button className='h-[3rem] color-blue px-16 text-white font-medium bg-[#3341C1] hover:bg-[#051076]'>Place bid</button>
+                    <button className='h-[3rem] color-blue px-8 md:px-16 text-white font-medium bg-[#3341C1] hover:bg-[#051076]'>Place bid</button>
                 </div>
             </article>
         </div>

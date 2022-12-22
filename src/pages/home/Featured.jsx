@@ -8,7 +8,7 @@ import eclipse5 from '../../assets/eclipse/Ellipse-18.png'
 
 function Featured({img}) {
     return (
-        <div className='relative flex flex-col md:flex-row border-t border-t-grey border-t-[0.5px] py-8 md:py-[60px] md:even:flex-row-reverse first:border-t-0 md:first:border-t md:last:pb-0 last:border-b border-b-grey border-b-[0.5px]  md:border-b-0'>
+        <div className='relative flex flex-col md:flex-row border-t border-t-grey border-t-[0.5px] py-8 md:py-[60px] md:even:flex-row-reverse first:border-t-0 md:first:border-t last:border-b border-b-grey border-b-[0.5px]  md:border-b-0'>
             <div className="md:w-1/2 md:first:mr-[37px] shrink-0 relative view-overlay">
                 <div className='absolute left-0 top-0 h-full w-full bg-black/[0.5] text-[2.5rem] font-clash flex justify-center transition-all md:opacity-0'>
                     <button className="flex items-end md:items-center text-white mb-6 ml-auto mr-10 md:m-0">
