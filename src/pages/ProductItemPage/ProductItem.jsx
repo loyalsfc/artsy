@@ -22,7 +22,6 @@ function ProductItem() {
         }
     },[])
 
-
     const recommendedItems = products.map((item, index)=>{
         if(index >= 10 && index <= 13){
             return(

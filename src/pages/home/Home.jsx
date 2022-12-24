@@ -97,7 +97,7 @@ function Home() {
                     <Explore content="See auctions" link='/auctions'/>
                 </section>
 
-                <section className='bg-[#e2e2e2] mb-[66px] md:mb-[147px]'>
+                <section className='bg-[#e2e2e2] mb-[66px] md:mb-[147px] overflow-hidden'>
                     <div className="container font-clash mx-auto md:py-[75px] relative">
                         <article className='flex justify-between'>
                             <h2 className='font-semibold mt-[7px] md:mt-0 text-[1.5rem] md:text-[55px] leading-[155%] text-[#161616] max-w-[256px] md:max-w-[535px]'>TOP CREATORS OF THE WEEK</h2>
@@ -121,10 +121,11 @@ function Home() {
                     </div>
                 </section>
 
-                <Newsletter />
+                <Newsletter className="px-4 md:px-0"/>
             </main>
-            
-            <Footer />
+            <div className='px-4 md:px-0'>
+                <Footer />
+            </div>
         </div>
     )
 }

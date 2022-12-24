@@ -9,7 +9,6 @@ import drops from './drops'
 function Drop() {
 
     const dropItems = drops.map(item=> {
-        console.log(item)
         return(
             <DropItem
                 key={item.id}
@@ -28,7 +27,7 @@ function Drop() {
             <main>
                 <div className="container mx-auto md:pt-10 ">
                     <div className="max-w-[1064px] mx-auto px-4 md:px-0">
-                        <p className='text-[#BCB7B7] hidden md:block'><Link to="/">Home</Link>/ <Link to="/auctions">Auctions</Link>/ <span className="text-grey">Live bid</span> </p>
+                        <p className='text-[#BCB7B7] hidden md:block'><Link to="/">Home</Link>/ <span className="text-grey">Drop</span> </p>
                         <section className='flex flex-col items-center justify-center text-center gap-4 mb-10 w-[80%] md:w-full mx-auto'>
                             <h1 className='text-[2rem] leading-[165%] text-black font-medium'>Upcoming drops</h1>
                             <p className='text-xl text-[#616161] leading-[200%]'>Turn on notification so that no drop will miss you</p>

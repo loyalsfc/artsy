@@ -112,7 +112,7 @@ function CartCheckout({hidden, width}) {
             </section>
             <section className='flex flex-col-reverse md:flex-row gap-12 justify-between'>
                 <div className={'flex flex-col justify-center item-center mx-12 md:mx-0 md:w-2/5 md: md:pr-24 ' + hidden}>
-                    <button className='bg-blue h-[3.5rem] px-8 text-xl mb-5 font-medium text-white block mx-auto'>
+                    <button className='bg-blue h-[3.5rem] w-full md:px-8 text-xl mb-5 font-medium text-white block mx-auto'>
                         <Link to="/shipping-details" className='block h-full flex items-center justify-center w-full'>Proceed to checkout</Link>
                     </button>
                     <Link to="/marketplace">

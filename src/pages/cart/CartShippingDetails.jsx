@@ -16,8 +16,8 @@ function CartShippingDetails() {
         wallet: '',
         city: '',
         country: '',
-        postcode: '001001',
-        number: '08123456785'
+        postcode: '',
+        number: ''
     })
 
     function handleSubmit(e){
@@ -60,7 +60,7 @@ function CartShippingDetails() {
                             className="inputStyle"
                             required
                         />
-                        <input type="checkbox" name="checkbox" id="checkbox" value={formData.checkbox} onChange={handleSwitch} />
+                        <input type="checkbox" name="checkbox" id="checkbox" className='bg-transparent' value={formData.checkbox} onChange={handleSwitch} />
                         <label htmlFor="checkbox" className='text-sm ml-3 mt-3 inline-block'>Get updates about new drops & exclusive offers</label>
                     </InputWrapper>
                     <InputWrapper>
@@ -358,6 +358,7 @@ function CartShippingDetails() {
                                 onChange={handleChange}
                                 className="inputStyle"
                                 required
+                                placeholder='001001'
                             />
                         </InputWrapper>
                     </div>
@@ -371,6 +372,7 @@ function CartShippingDetails() {
                             onChange={handleChange}
                             className="inputStyle"
                             required
+                            placeholder='08123456785'
                         />
                     </InputWrapper>
                     <button className='block w-full bg-blue text-xl text-white mt-8 h-[3.5rem]'>Proceed to payment</button>

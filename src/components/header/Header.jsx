@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom'
 import { Context } from '../../Context'
 
 function Header() {
+    const home = useRef() 
+    const marketPlace = useRef()
+    const auction = useRef()
+    const drop = useRef()
+    
     const {cart} = useContext(Context)
     const mobileNav = useRef()
 
@@ -44,10 +49,10 @@ function Header() {
                     </Link>
                     <nav className='hidden md:block'>
                         <ul className='nav-items'>
-                            <li onClick={()=>switchActive('home')} id="home" className='nav active'><Link to="/">Home</Link></li>
-                            <li onClick={()=>switchActive('marketplace')} id="marketplace" className='nav'><Link to="/marketplace">Marketplace</Link></li>
-                            <li onClick={()=>switchActive('auctions')} id="auctions" className='nav'><Link to="/auctions">Aunctions</Link></li>
-                            <li onClick={()=>switchActive('drop')} id="drop" className='nav'><Link to="/drop">Drop</Link></li>
+                            <li ref={home} onClick={()=>switchActive('home')} id="home" className='nav active'><Link to="/">Home</Link></li>
+                            <li ref={marketPlace} onClick={()=>switchActive('marketplace')} id="marketplace" className='nav'><Link to="/marketplace">Marketplace</Link></li>
+                            <li ref={auction} onClick={()=>switchActive('auctions')} id="auctions" className='nav'><Link to="/auctions">Aunctions</Link></li>
+                            <li ref={drop} onClick={()=>switchActive('drop')} id="drop" className='nav'><Link to="/drop">Drop</Link></li>
                         </ul>
                     </nav>
                     <div className='flex'>

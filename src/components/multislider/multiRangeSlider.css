@@ -76,7 +76,7 @@
     width: 2rem;
     margin-top: 4px;
     pointer-events: all;
-    position: relative;
+    /* position: relative; */
   }
   
   /* For Firefox browsers */
@@ -89,7 +89,7 @@
     width: 2rem;
     margin-top: 4px;
     pointer-events: all;
-    position: relative;
+    /* position: relative; */
   }
   
 .thumb--left::-webkit-slider-thumb {

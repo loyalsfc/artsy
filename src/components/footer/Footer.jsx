@@ -3,23 +3,23 @@ import React from 'react'
 function Footer({className}) {
     return (
             <footer className={className}>
-                <div className="container mx-auto text-[26px] px-4 md:px-0 leading-[35px] pb-4 text-[#333333] flex justify-between">
-                    <h1 className='hidden md:block font-clash font-semibold leading-[59px] text-grey-dark text-[3rem] flex items-center'>ARTSY.</h1>
+                <div className="container mx-auto text-xl leading-[35px] pb-4 text-[#333333] flex justify-between">
+                    <h1 className='hidden md:block font-clash font-semibold leading-[59px] text-grey-dark text-2xl flex items-center'>ARTSY.</h1>
                     <ul className='hidden md:block'>
-                        <li className='mb-[33px] last:mb-0'>Home</li>
-                        <li className='mb-[33px] last:mb-0'>Market Place</li>
-                        <li className='mb-[33px] last:mb-0'>Auctions</li>
-                        <li className='mb-[33px] last:mb-0'>Drops</li>
+                        <li className='mb-4 last:mb-0'>Home</li>
+                        <li className='mb-4 last:mb-0'>Market Place</li>
+                        <li className='mb-4 last:mb-0'>Auctions</li>
+                        <li className='mb-4 last:mb-0'>Drops</li>
                     </ul>
                     <ul className='hidden md:block'>
-                        <li className='mb-[33px] last:mb-0'>Blog</li>
-                        <li className='mb-[33px] last:mb-0'>Wallets</li>
-                        <li className='mb-[33px] last:mb-0'>Rates</li>
-                        <li className='mb-[33px] last:mb-0'>High bids</li>
+                        <li className='mb-4 last:mb-0'>Blog</li>
+                        <li className='mb-4 last:mb-0'>Wallets</li>
+                        <li className='mb-4 last:mb-0'>Rates</li>
+                        <li className='mb-4 last:mb-0'>High bids</li>
                     </ul>
-                    <ul className='text-[11.64px] md:text-[26px]'>
+                    <ul className='text-sm md:text-xl'>
                         <li className='md:hidden mb-[14px]'>REACH US</li>
-                        <li className='flex items-center mb-[14px] md:mb-[30px]'>
+                        <li className='flex items-center mb-[14px] md:mb-4'>
                             <svg className='h-6 w-6 md:h-[61px] md:w-[54px]' width="61" height="54" viewBox="0 0 61 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12.05 10H48.95C49.4937 10 50.0151 10.199 50.3996 10.5532C50.784 10.9075 51 11.3879 51 11.8889V42.1111C51 42.6121 50.784 43.0925 50.3996 43.4468C50.0151 43.801 49.4937 44 48.95 44H12.05C11.5063 44 10.9849 43.801 10.6004 43.4468C10.216 43.0925 10 42.6121 10 42.1111V11.8889C10 11.3879 10.216 10.9075 10.6004 10.5532C10.9849 10.199 11.5063 10 12.05 10ZM46.9 18.0051L30.6476 31.4162L14.1 17.9636V40.2222H46.9V18.0051ZM15.1476 13.7778L30.625 26.3616L45.8791 13.7778H15.1476Z" fill="#333333"/>
                             </svg> 
@@ -33,7 +33,7 @@ function Footer({className}) {
                         </li>
                     </ul>
                 </div>
-                <p className='hidden md:block text-center -spacing-[0.02em] text-[#333333]/[0.5] text-xl font-medium font-rubik mt-[91px] mb-11'>Artsystudios © 2022. All Rights Reserved.</p>
+                <p className='hidden md:block text-center -spacing-[0.02em] text-[#333333]/[0.5] text-sm font-medium font-rubik mt-10 mb-11'>Artsystudios © 2022. All Rights Reserved.</p>
             </footer>
     )
 }

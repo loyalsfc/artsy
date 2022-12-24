@@ -121,3 +121,38 @@
     height: 224px;
   }
 }
+
+.grey-color{
+  background-color: #999EA5;
+}
+
+.green-color{
+ background-color: #3EA03B;
+}
+.background-grey{
+  background-color: #B8BABC !important;
+}
+
+.skeleton-loader div, .skeleton-loader article{
+  animation: anims 1s ease-in infinite alternate-reverse forwards;
+}
+
+@keyframes anims{
+  0%{opacity: 1;} 
+  100%{opacity: 0.1;}
+}
+
+.like-container svg{
+  top: 100%;
+  animation: fadeup 5s ease-in forwards;
+}
+@keyframes fadeup {
+  0%{
+    opacity: 1;
+    top: 100%;
+  }
+  100%{
+    opacity: 0;
+    top: 0;
+  }
+}

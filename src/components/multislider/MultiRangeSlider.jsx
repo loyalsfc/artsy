@@ -42,7 +42,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
   }, [minVal, maxVal, onChange]);
 
   return (
-    <div className="container mb-[5rem]">
+    <div className="container mb-[5rem] relative">
       <input
         type="range"
         min={min}
@@ -69,7 +69,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
         className="thumb thumb--right"
       />
 
-      <div className="slider">
+      <div className="slider relative">
         <div className="slider__track" />
         <div ref={range} className="slider__range" />
         <div className="slider__left-value">{minVal}</div>
@@ -78,11 +78,5 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
     </div>
   );
 };
-
-// MultiRangeSlider.propTypes = {
-//   min: PropTypes.number.isRequired,
-//   max: PropTypes.number.isRequired,
-//   onChange: PropTypes.func.isRequired
-// };
 
 export default MultiRangeSlider;

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Home from './pages/home/Home'
 import { ContextProvider } from './Context';
 

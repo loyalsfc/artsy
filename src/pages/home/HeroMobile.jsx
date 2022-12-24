@@ -5,8 +5,8 @@ import Rectangle241 from '../../assets/mobileHero/Rectangle241.png'
 
 function HeroMobile() {
     return (
-        <div className='mt-8 mb-[100px] md:hidden'>
-            <div className='relative h-[300px]'>
+        <div className='mt-8 mb-[100px] md:hidden '>
+            <div className='relative h-[300px] px-'>
                 <img src={Rectangle240} alt="" className='absolute top-0 left-1/2 h-full -translate-x-1/2 -rotate-[9.31deg]'/>
                 <img src={Rectangle241} alt="" className='absolute top-0 left-1/2 h-full -translate-x-1/2 rotate-[7.75deg]'/>
                 <img src={Rectangle242} alt="" className='absolute top-0 left-1/2 h-full -translate-x-1/2'/>

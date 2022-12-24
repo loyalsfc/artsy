@@ -125,7 +125,7 @@ function PaymentCheckout() {
                                     </div>
                                 </InputWrapper>
                                 <InputWrapper>
-                                    <input type="checkbox" name="saveWallet" id="saveWallet" value={formData.saveWallet} onChange={handleSwitch} />
+                                    <input type="checkbox" className='bg-transparent' name="saveWallet" id="saveWallet" value={formData.saveWallet} onChange={handleSwitch} />
                                     <label htmlFor="saveWallet" className='text-sm ml-3 mt-3 md:inline-block'>Save my wallet details & information for future transactions</label>
                                 </InputWrapper>
                             </section>
