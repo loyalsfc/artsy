@@ -8,6 +8,7 @@ import Modal from '../../components/modal/Modal'
 
 
 function CartCheckout({hidden, width}) {
+    const shippingDetails = useRef()
     const [modalIsOpen, setModalIsOpen] = useState(false)
     const {cart, setCart} = useContext(Context)
     const [totalPrice, setTotalPrice] = useState(0)
@@ -105,24 +106,33 @@ function CartCheckout({hidden, width}) {
                 <button className='rounded-full bg-white text-black py-2 px-8'>Shop</button>
                 <button className='rounded-full '>Scheduled</button>
             </div>
-            <section className='mb-8'>
-                {productsInCart}
-            </section>
-            <section className='flex flex-col-reverse md:flex-row gap-12 justify-between'>
-                <div className={'flex flex-col justify-center item-center mx-12 md:mx-0 md:w-2/5 md: md:pr-24 ' + hidden}>
-                    <button className='bg-blue h-[3.5rem] w-full md:px-8 text-xl mb-5 font-medium text-white block mx-auto'>
-                        <Link to="/shipping-details" className='block h-full flex items-center justify-center w-full'>Proceed to checkout</Link>
-                    </button>
-                    <Link to="/marketplace">
-                        <span className='text-center  block text-lg underline text-[#006CA2]'>Continue Shopping</span>
-                    </Link>
+            <main className='flex gap-8 justify-end'>
+                <div ref={shippingDetails} className='overflow-hidden w-0'>
+                    {/* <CartShippingDetails /> */}
                 </div>
-                <article className={'text-lg flex flex-col gap-6 leading-[100%] ' + width}>
-                    <p className='text-grey-light flex'><span>Products in cart :</span> <span className='text-grey-dark ml-auto'>{cart.length} item{cart.length > 1 ? 's' : ''}</span></p>
-                    <p className='text-grey-light flex'><span>Shipping :</span> <span className='text-grey-dark ml-auto'>${(totalPrice * 0.1).toFixed(2)}</span></p>
-                    <p className='text-grey-light flex'><span>Total :</span> <span className='text-grey-dark ml-auto'>${(totalPrice + totalPrice * 0.1).toFixed(2)}</span></p>
-                </article>
-            </section>
+                <div className='transition-all shrink-0 w-full'>
+                    <section className='mb-8'>
+                        {productsInCart}
+                    </section>
+                    <section className='flex flex-col-reverse md:flex-row gap-12 justify-between'>
+                        <div className={`flex flex-col justify-center item-center mx-12 md:mx-0 md:w-2/5 md: md:pr-24 ${hidden}`}>
+                            <Link to='/shipping-details'> 
+                                <button className='bg-blue h-[3.5rem] w-full md:px-8 text-xl mb-5 font-medium text-white block mx-auto'>
+                                 Proceed to checkout
+                                </button>
+                            </Link>
+                            <Link to="/marketplace">
+                                <span className='text-center  block text-lg underline text-[#006CA2]'>Continue Shopping</span>
+                            </Link>
+                        </div>
+                        <article className={`text-lg flex flex-col gap-6 leading-[100%]  ${width}`}>
+                            <p className='text-grey-light flex'><span>Products in cart :</span> <span className='text-grey-dark ml-auto'>{cart.length} item{cart.length > 1 ? 's' : ''}</span></p>
+                            <p className='text-grey-light flex'><span>Shipping :</span> <span className='text-grey-dark ml-auto'>${(totalPrice * 0.1).toFixed(2)}</span></p>
+                            <p className='text-grey-light flex'><span>Total :</span> <span className='text-grey-dark ml-auto'>${(totalPrice + totalPrice * 0.1).toFixed(2)}</span></p>
+                        </article>
+                    </section>
+                </div>
+            </main>
         </>
     )
 }

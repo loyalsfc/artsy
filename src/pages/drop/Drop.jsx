@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../../components/footer/Footer'
-import Header from '../../components/header/Header'
 import Newsletter from '../../components/newsletter/Newsletter'
 import Transitions from '../../components/transition/Transition'
 import DropItem from './DropItem'
@@ -24,7 +23,6 @@ function Drop() {
 
     return (
         <Transitions>
-            <Header />
             <main>
                 <div className="container mx-auto md:pt-10 ">
                     <div className="max-w-[1064px] mx-auto px-4 md:px-0">

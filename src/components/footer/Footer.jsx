@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Footer({className}) {
     return (
@@ -6,10 +7,10 @@ function Footer({className}) {
                 <div className="container mx-auto text-xl leading-[35px] pb-4 text-[#333333] flex justify-between">
                     <h1 className='hidden md:block font-clash font-semibold leading-[59px] text-grey-dark text-2xl flex items-center'>ARTSY.</h1>
                     <ul className='hidden md:block'>
-                        <li className='mb-4 last:mb-0'>Home</li>
-                        <li className='mb-4 last:mb-0'>Market Place</li>
-                        <li className='mb-4 last:mb-0'>Auctions</li>
-                        <li className='mb-4 last:mb-0'>Drops</li>
+                        <li className='mb-4 last:mb-0'><Link to="/">Home</Link></li>
+                        <li className='mb-4 last:mb-0'><Link to="/marketplace">Market Place</Link></li>
+                        <li className='mb-4 last:mb-0'><Link to="/auctions">Auctions</Link></li>
+                        <li className='mb-4 last:mb-0'><Link to="/drop">Drops</Link></li>
                     </ul>
                     <ul className='hidden md:block'>
                         <li className='mb-4 last:mb-0'>Blog</li>

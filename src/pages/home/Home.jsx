@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../../components/header/Header'
 import Hero from './Hero'
 import Featured from './Featured'
 
@@ -17,7 +16,6 @@ function Home() {
     return (
     <Transitions>
         <div>
-            <Header />
             <section>
                 <h1 className='mb-[30px] font-medium md:font-semibold font-clash text-center md:text-[80px] text-[2rem] px-4 leading-[150%] md:leading-[120%] max-w-[1068px] mx-auto'>Photography is poetry <span className='hidden md:inline'>& <br/></span> <span className='md:hidden'>and</span> beautiful untold stories</h1>
                 <p className='md:text-[1.25rem] font-medium px-4 text-center max-w-[926px] mx-auto leading-[156%] md:leading-[120%]'>Flip through more than 10,000 vintage shots, old photograghs, historic <br className='hidden md:inline'/> images and captures seamlessly in one place. Register to get top access.</p>
@@ -64,27 +62,27 @@ function Home() {
                             <div className='w-[295.69px] rounded-full h-2.5 bg-[#AEAEAE] overflow-hidden'>
                                 <div className='w-1/5 h-full bg-white rounded-full'></div>
                             </div>
-                            <div className='flex'>
-                                <button className='rounded-btn shadow-3xl mr-5 bg-white/[0.2]'>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_433_222)">
-                                            <path d="M10.915 9.85521L7.06873 6.00888L8.16745 4.91016L13.1125 9.85521L8.16745 14.8003L7.06873 13.7015L10.915 9.85521Z" fill="white"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_433_222">
-                                                <rect width="18.6488" height="18.6488" fill="white" transform="translate(0.679932 0.530762)"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
+                            <div className='flex gap-5'>
                                 <button className="rounded-btn shadow-3xl bg-white/[0.2]">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_433_225)">
+                                        <g clipPath="url(#clip0_433_225)">
                                             <path d="M8.94469 9.85521L12.791 6.00888L11.6923 4.91016L6.74724 9.85521L11.6923 14.8003L12.791 13.7015L8.94469 9.85521Z" fill="white"/>
                                         </g>
                                         <defs>
                                             <clipPath id="clip0_433_225">
                                                 <rect width="18.6488" height="18.6488" fill="white" transform="matrix(-1 0 0 1 19.1798 0.530762)"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                                <button className='rounded-btn shadow-3xl bg-white/[0.2]'>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clipPath="url(#clip0_433_222)">
+                                            <path d="M10.915 9.85521L7.06873 6.00888L8.16745 4.91016L13.1125 9.85521L8.16745 14.8003L7.06873 13.7015L10.915 9.85521Z" fill="white"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_433_222">
+                                                <rect width="18.6488" height="18.6488" fill="white" transform="translate(0.679932 0.530762)"/>
                                             </clipPath>
                                         </defs>
                                     </svg>

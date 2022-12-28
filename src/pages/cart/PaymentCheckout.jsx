@@ -11,7 +11,7 @@ import WalletConnectRounded from '../../assets/wallets/WalletConnect-rounded.png
 import CoinbaseRounded from '../../assets/wallets/Coinbase-rounded.png'
 import MetaMaskRounded from '../../assets/wallets/MetaMask-rounded.png'
 import Loader from '../../components/loader/Loader'
-import Header from '../../components/header/Header'
+import Transitions from '../../components/transition/Transition'
 
 function PaymentCheckout() {
     const navigate = useNavigate()
@@ -54,9 +54,8 @@ function PaymentCheckout() {
     }
 
     return (
-        <>
+        <Transitions>
             {paymentConfirm && <Loader />}
-            <Header />
             <div className={`max-w-[1064px] mx-auto pb-8 px-4 md:px-0`}>
                 <div className='w-3/5 mx-auto mb-8 hidden md:block'>
                     <button className='cart-btn'><Link to="/cart">Shopping cart </Link></button>
@@ -149,7 +148,7 @@ function PaymentCheckout() {
                     </div>
                 </main>
             </div>
-        </>
+        </Transitions>
     )
 }
 

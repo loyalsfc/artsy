@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import illustration1 from '../../assets/Illustration1.png'
 import illustration2 from '../../assets/Illustration2.png'
-import Header from '../../components/header/Header'
 import { Context } from '../../Context'
 
 
@@ -9,7 +8,6 @@ function Confirmation() {
     const {name} = useContext(Context)
     return (
         <>
-            <Header />
             <main>
                 <div className="container mx-auto">
                     <div className={`max-w-[1064px] mx-auto pb-8`}>

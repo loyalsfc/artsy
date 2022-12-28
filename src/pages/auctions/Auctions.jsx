@@ -4,13 +4,14 @@ import AuctionProduct from './AuctionProduct'
 import TopBids from './TopBids'
 import { toTitleCase } from '../../utils'
 import bids from './bids'
-import Header from '../../components/header/Header'
 import { Context } from '../../Context'
 import Transitions from '../../components/transition/Transition'
+import Livebid from '../livebid/Livebid'
 
 function Auctions() {
     const {auctionProduct} = useContext(Context)
     const [bidItems, setBidItems] = useState(bids)
+    const [showLiveBid, setShowLiveBid] = useState({status: false, id: ""})
     const scrollContainer = useRef()
 
     function scrollForward(){
@@ -28,9 +29,22 @@ function Auctions() {
                 key={item.id}
                 id={item.id}
                 img={item.url}
+                handleClick={liveBidding}
             />
         )
     })
+
+    function liveBidding(id){
+        setShowLiveBid(prevItem => {
+            return {status: !prevItem.status, id: id}
+        })
+    }
+
+    function closeLiveBid(){
+        setShowLiveBid(prevItem => {
+            return {...prevItem, status: !prevItem.status}
+        })
+    }
 
     const bidsItems = bidItems.map(item => {
         return(
@@ -62,7 +76,9 @@ function Auctions() {
 
         return (
             <Transitions>
-                <Header />
+                {showLiveBid.status && <div className='fixed top-0 left-0 w-full h-screen bg-white overflow-scroll z-50'>
+                    <Livebid prodId={showLiveBid.id} handleClick={closeLiveBid}/>
+                </div>}
                 <div className="container mx-auto pb-16">
                     <div className="max-w-[1064px] mx-auto  px-4 md:px-0">
                         <article className='text-lg leading-[200%] font-medium mb-10'>

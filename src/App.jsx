@@ -21,6 +21,7 @@ function App() {
   return (
     <ContextProvider>
       <Router>
+        <Header />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/marketplace' element={<ProductPage />} />

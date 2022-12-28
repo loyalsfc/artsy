@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import { Context } from '../../Context';
@@ -7,6 +7,8 @@ import CartCheckout from './CartCheckout';
 import InputWrapper from './InputWrapper';
 
 function CartShippingDetails() {
+    const cartItems = useRef()
+    const checkoutForm = useRef()
     const {setName} = useContext(Context)
     const navigate = useNavigate()
     const [formData, setFormData] = useState({
@@ -38,17 +40,26 @@ function CartShippingDetails() {
         })
     }
 
+    useEffect(()=>{
+        let timeout = setTimeout(() => {
+            cartItems.current.classList.replace('w-full', 'w-1/2')
+            timeout = setTimeout(() => {
+                checkoutForm.current.classList.replace('w-0', 'w-1/2')
+            }, 500);
+          }, 100);
+          return () => clearTimeout(timeout);
+    },[])
+
     return (
         <div className={`max-w-[1064px] px-4 md:px-0 mx-auto pb-8`}>
-            <Header />
             <p className='font-medium text-[#BCB7B7] md:hidden mb-8'>Home/ Marketplace/ Cart/ <span className='text-grey'>Shipping</span></p>
             <div className='w-3/5 mx-auto mb-8 hidden md:block'>
                 <Link to="/cart"><button className='cart-btn'>Shopping cart</button></Link>
                 <button className='cart-btn active-cart-btn'>Shipping details</button>
                 <button className='cart-btn'>Payment details</button>
             </div>
-            <main className='flex gap-24'>
-                <form onSubmit={handleSubmit} className="md:w-1/2">
+            <main className='flex gap-16 justify-end'>
+                <form ref={checkoutForm} onSubmit={handleSubmit} className="w-0 grow-0 overflow-hidden">
                     <InputWrapper>
                         <label htmlFor="email">Your email</label>
                         <input 
@@ -378,11 +389,11 @@ function CartShippingDetails() {
                     <button className='block w-full bg-blue text-xl text-white mt-8 h-[3.5rem]'>Proceed to payment</button>
                     <Link to="/cart" className='md:hidden'><span className='text-lg underline text-[#006CA2] block text-center my-7'>Go Back to cart</span></Link>
                 </form>
-                <div className='hidden md:block'>
+                <div ref={cartItems} className='hidden md:block w-full transition-all duration-500'>
                     <CartCheckout hidden='hidden' width="w-full"/>
                 </div>
             </main>
-        </div>
+         </div>
     )
 }
 

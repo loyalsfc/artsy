@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../../components/footer/Footer'
-import Header from '../../components/header/Header'
 import Transitions from '../../components/transition/Transition'
 import { Context } from '../../Context'
 import Products from './Products'
@@ -13,7 +12,6 @@ function ProductPage() {
 
     return (
     <Transitions>
-        <Header />
         <div className='md:mt-5 mb-16 h-calc overflow-y-scroll'>
             <div className='container mx-auto flex'>
                 <SideNav />
