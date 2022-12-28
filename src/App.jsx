@@ -2,7 +2,10 @@ import Home from './pages/home/Home'
 import { ContextProvider } from './Context';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProductPage from './pages/productpage/ProductPage';
+import { AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
+
+import ProductPage from './pages/marketplace/Marketplace';
 import Header from './components/header/Header';
 import ProductItem from './pages/ProductItemPage/ProductItem';
 import Cart from './pages/cart/Cart';

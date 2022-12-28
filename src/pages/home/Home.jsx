@@ -11,9 +11,11 @@ import FadeIn from './FadeIn'
 import HeroMobile from './HeroMobile'
 import Newsletter from '../../components/newsletter/Newsletter'
 import Footer from '../../components/footer/Footer'
+import Transitions from '../../components/transition/Transition'
 
 function Home() {
     return (
+    <Transitions>
         <div>
             <Header />
             <section>
@@ -127,6 +129,7 @@ function Home() {
                 <Footer />
             </div>
         </div>
+    </Transitions>
     )
 }
 

@@ -59,8 +59,8 @@ function PaymentCheckout() {
             <Header />
             <div className={`max-w-[1064px] mx-auto pb-8 px-4 md:px-0`}>
                 <div className='w-3/5 mx-auto mb-8 hidden md:block'>
-                    <button className='cart-btn'>Shopping cart</button>
-                    <button className='cart-btn'>Shipping details</button>
+                    <button className='cart-btn'><Link to="/cart">Shopping cart </Link></button>
+                    <button className='cart-btn'><Link to="/shipping-details">Shipping details </Link></button>
                     <button className='cart-btn active-cart-btn'>Payment details</button>
                 </div>
                 <main>

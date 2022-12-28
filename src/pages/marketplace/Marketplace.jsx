@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../../components/footer/Footer'
 import Header from '../../components/header/Header'
+import Transitions from '../../components/transition/Transition'
 import { Context } from '../../Context'
 import Products from './Products'
 import SideNav from './SideNav'
@@ -11,7 +12,7 @@ function ProductPage() {
     const {products} = useContext(Context)
 
     return (
-    <>
+    <Transitions>
         <Header />
         <div className='md:mt-5 mb-16 h-calc overflow-y-scroll'>
             <div className='container mx-auto flex'>
@@ -35,7 +36,7 @@ function ProductPage() {
             </div>
             <Footer className="md:hidden px-4 md:px-0 mt-5"/>
         </div>
-    </>
+    </Transitions>
     )
 }
 

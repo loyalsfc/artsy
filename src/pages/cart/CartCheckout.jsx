@@ -90,11 +90,9 @@ function CartCheckout({hidden, width}) {
         <>
             <ToastContainer />
             <Modal isOpen={modalIsOpen} onRequestClose={toggleModal}>
-                <div className={'flex my-2 text-xs md:text-base ' + hidden}>
+                <div className='grid grid-cols-2 my-2 text-xs md:text-base'>
                     <button onClick={toggleModal} className='h-[3.5rem] px-8 flex items-center border-2 border-grey-dark mr-4'>SAVE FOR LATER</button>
-                    <button onClick={confirmCartRemove} className='bg-grey-dark text-white h-[3.5rem] px-8 flex items-center'>
-                        <span>REMOVE ITEM</span>
-                    </button>
+                    <button onClick={confirmCartRemove} className='bg-grey-dark text-white h-[3.5rem] px-8 flex items-center flex items-center justify-center'>REMOVE ITEM</button>
                 </div>
             </Modal>
             <div className={'w-3/5 mx-auto mt-5 mb-8 hidden ' + hidden}>

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Context } from '../../Context'
 import Recommended from './Recommended'
 import { toTitleCase } from '../../utils'
@@ -13,6 +13,7 @@ function ProductItem() {
     const {products, setCart, cart, toggleFavorite, favorite} = useContext(Context)
     const [qty, setQty] = useState(1)
     const [disableButton, setDisableButton] = useState(false)
+    const navigate = useNavigate()
     
     const openProduct = products.find(item => item.id == productId)
 
@@ -47,6 +48,13 @@ function ProductItem() {
         })
         setDisableButton(true)
         toast("Product Added Successfuly!", {type: 'success'});
+        navigate('/cart')
+    }
+
+    function decreaseQty(){
+        if(qty > 1){
+            setQty(prevValue => prevValue-1)
+        } 
     }
 
     return (
@@ -80,7 +88,7 @@ function ProductItem() {
                                     <p className='mb-3 md:text-black'>{openProduct && toTitleCase(openProduct.origin)}</p>
                                     <p className='mb-4 md:text-black text-lg font-medium'>Total views: <span>{openProduct && openProduct.views}</span></p>
                                     <div className='mb-6 text-2xl md:text-xl font-medium'>
-                                        <button onClick={()=> setQty(prevValue => prevValue-1)} className='mr-3'>-</button>
+                                        <button onClick={decreaseQty} className='mr-3'>-</button>
                                         <span className='w-4 inline-block text-center'>{qty}</span>
                                         <button onClick={()=> setQty(prevValue => prevValue+1)} className='ml-3'>+</button>
                                     </div>

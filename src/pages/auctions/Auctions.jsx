@@ -6,6 +6,7 @@ import { toTitleCase } from '../../utils'
 import bids from './bids'
 import Header from '../../components/header/Header'
 import { Context } from '../../Context'
+import Transitions from '../../components/transition/Transition'
 
 function Auctions() {
     const {auctionProduct} = useContext(Context)
@@ -60,7 +61,7 @@ function Auctions() {
     }
 
         return (
-            <>
+            <Transitions>
                 <Header />
                 <div className="container mx-auto pb-16">
                     <div className="max-w-[1064px] mx-auto  px-4 md:px-0">
@@ -106,8 +107,7 @@ function Auctions() {
                         </section>
                     </div>
                 </div>
-            
-            </>
+            </Transitions>
         )
 }
 

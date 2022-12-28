@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
 import Header from '../../components/header/Header'
+import Transitions from '../../components/transition/Transition'
 import { Context } from '../../Context'
 import CartCheckout from './CartCheckout'
 import EmptyCart from './EmptyCart'
@@ -9,7 +9,7 @@ function Cart() {
     const {cart} = useContext(Context)
 
     return (
-        <>
+        <Transitions>
             <Header />
             <main className='pb-10'>
                 <div className="container mx-auto px-4 md:px-0">
@@ -18,7 +18,7 @@ function Cart() {
                     </div>
                 </div>
             </main>
-        </>
+        </Transitions>
     )
 }
 

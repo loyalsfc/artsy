@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Footer from '../../components/footer/Footer'
 import Header from '../../components/header/Header'
 import Newsletter from '../../components/newsletter/Newsletter'
+import Transitions from '../../components/transition/Transition'
 import DropItem from './DropItem'
 import drops from './drops'
 
@@ -22,7 +23,7 @@ function Drop() {
     })
 
     return (
-        <>
+        <Transitions>
             <Header />
             <main>
                 <div className="container mx-auto md:pt-10 ">
@@ -42,7 +43,7 @@ function Drop() {
                     </div>
                 </div>
             </main>
-        </>
+        </Transitions>
   )
 }
 
