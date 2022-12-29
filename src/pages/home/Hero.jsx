@@ -6,10 +6,12 @@ import image3 from '../../assets/carouselImage/Homepage-carousel-WEB-2.png'
 import image4 from '../../assets/carouselImage/Homepage-carousel-WEB-3.png'
 import image5 from '../../assets/carouselImage/Homepage-carousel-WEB-4.png'
 function Hero() {
+    //Display all the Hero images in an array
     const [images, setImages] = useState([image1, image2, image3, image4, image5]);
     const [animate, setAnimate] = useState(true);
 
     useEffect(() => {
+        //Shuffling the array every 5 seconds
         setAnimate(true)
         const interval = setInterval(() => {
             setImages(currentItems => shuffleArray(currentItems));
@@ -18,6 +20,7 @@ function Hero() {
         return () => clearInterval(interval);
     }, [images]);
 
+    //Shuffling array
     function shuffleArray(originalArray) {
         setAnimate(false)
         let array = [...originalArray];
@@ -36,8 +39,7 @@ function Hero() {
     return array;
     }
 
-    console.log(images)
-
+    //Map through the images array to display them
     const heroImage = images.map((item, index) => {
         return (
             <div key={index} className={`h-[505px] w-[360px] overflow-hidden ${animate ? 'item' : ''}`}>
@@ -49,14 +51,6 @@ function Hero() {
     return (
         <div className={`hidden md:grid grid-cols-5 gap-[18px] content-center border-red-500 w-max mt-[50px] mb-[162px]`}>
             {heroImage}
-        </div>
-    )
-}
-
-function CarouselItem({url}){
-    return(
-        <div className='h-[505px] w-[360px] overflow-hidden'>
-            <img src={url} alt="image" className='' />
         </div>
     )
 }

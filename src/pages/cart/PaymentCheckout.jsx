@@ -28,6 +28,7 @@ function PaymentCheckout() {
     const [paymentConfirm, setPaymentConfirm] = useState(false)
 
     useEffect(()=>{
+        //loop through cart items to calculate the total price
         cart.forEach(item => {
             setTotalPrice(prevPrice => prevPrice + (item.price.usd * item.qty))
         })
@@ -35,9 +36,11 @@ function PaymentCheckout() {
 
     function handleSubmit(e){
         e.preventDefault()
+        //set payment confirm to true and showloader
         setPaymentConfirm(true)
         setCart([])
-        setTimeout(()=>{navigate('/checkout-success')}, 5000)
+        //wait for three seconds and navigate to success page
+        setTimeout(()=>{navigate('/checkout-success')}, 3000)
 
     }
 

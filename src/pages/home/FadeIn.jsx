@@ -9,16 +9,22 @@ function FadeIn() {
     const imageRef2 = useRef()
     const imageRef1 = useRef()
 
+    // Set all images in array 
     const images = [imageRef1, imageRef2, imageRef3]
 
     const [counter, setCounter] = useState(1)
 
     useEffect(() => {
         const interval = setInterval(() => {
+            // Loop through all the images and zero opacity to fadeout current image
              images.forEach(item=>{
                 item.current.classList.add('opacity-0')
             })
+
+            // Remove zero opacity from next image to fade in 
             images[counter].current.classList.remove('opacity-0')
+
+            // Increment the value of the counter or set to zero if value is 2 
             if (counter === 2) {
                 setCounter(0)
             } else {
@@ -26,6 +32,7 @@ function FadeIn() {
             }
         }, 5000)
     
+        //Clearing interval to prevent memory leak
         return () => {
             clearInterval(interval)
         };

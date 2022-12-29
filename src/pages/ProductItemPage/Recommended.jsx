@@ -4,7 +4,9 @@ import { Context } from '../../Context'
 
 function Recommended({img, title, ethprice, id, setFavorite}) {
     const {favorite} = useContext(Context)
+    
     const scrollTop = () => {
+        // Scroll to top of window 
         window.scrollTo(0, 0)
     }
 

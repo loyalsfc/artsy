@@ -26,32 +26,39 @@ function SideNav() {
 
             <div className='mb-8'>
                 <CatTitle title="By Category" />
-                <CheckBox id="editorial" title="Editorial" />
-                <CheckBox id="fashion" title="Fashion" />
-                <CheckBox id="optics" title="Optics" />
-                <CheckBox id="art-meseuum" title="Art & Museum" />
-                <CheckBox id="nature" title="Nature" />
+                <div className='transition-all overflow-hidden'>
+                    <CheckBox id="editorial" title="Editorial" />
+                    <CheckBox id="fashion" title="Fashion" />
+                    <CheckBox id="optics" title="Optics" />
+                    <CheckBox id="art-meseuum" title="Art & Museum" />
+                    <CheckBox id="nature" title="Nature" />
+                </div>
             </div>
 
             <div className="mb-8">
                 <CatTitle title="By Price" />
-                <p className='my-4 mb-8 text-xl text-grey'>${value.min.toFixed(2)} - ${value.max.toFixed(2)}</p>
-                <MultiRangeSlider
-                    min={1}
-                    max={100}
-                    onChange={({ min, max }) => setValue({min: min, max: max})}
-                />
+                <div className='transition-all overflow-hidden'>
+                    <p className='my-4 mb-8 text-xl text-grey'>${value.min.toFixed(2)} - ${value.max.toFixed(2)}</p>
+                    <MultiRangeSlider
+                        min={1}
+                        max={100}
+                        onChange={({ min, max }) => setValue({min: min, max: max})}
+                    />
+                </div>
             </div>
             <div className="my-8">
                 <CatTitle title="By artist" />
-                <p className='underline mb-4'>All</p>
-                <p className='mb-4 last:mb-0'>Below $100.00</p>
-                <p className='mb-4 last:mb-0'>$100.00 - $150.00</p>
-                <p className='mb-4 last:mb-0'>$150.00 - $200.00</p>
-                <p className='mb-4 last:mb-0'>Above $200.00</p>
+                <div className='transition-all overflow-hidden'>
+                    <p className='underline mb-4'>All</p>
+                    <p className='mb-4 last:mb-0'>Below $100.00</p>
+                    <p className='mb-4 last:mb-0'>$100.00 - $150.00</p>
+                    <p className='mb-4 last:mb-0'>$150.00 - $200.00</p>
+                    <p className='mb-4 last:mb-0'>Above $200.00</p>
+                </div>
             </div>
             <div className="mb-4">
                 <CatTitle title="Collection year"/>
+                <div></div>
             </div>
         </aside>
     )

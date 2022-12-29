@@ -12,6 +12,7 @@ import "./styles.css";
 import { Navigation } from "swiper";
 import Recommended from "../../pages/ProductItemPage/Recommended";
 import { Context } from "../../Context";
+import {toTitleCase} from '../../utils'
 
 export default function SwiperItem() {
   const {products, toggleFavorite} = useContext(Context)
@@ -22,7 +23,7 @@ export default function SwiperItem() {
             <Recommended
                 id={item.id}
                 img={item.url} 
-                title={item.name}
+                title={toTitleCase(item.name)}
                 ethprice={item.price.eth}
                 setFavorite={toggleFavorite}
             />
@@ -32,6 +33,7 @@ export default function SwiperItem() {
     })
   return (
     <>
+    {/* Seeting swiper for mobile  */}
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         {recommendedItems}
       </Swiper>

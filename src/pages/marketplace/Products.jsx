@@ -5,9 +5,12 @@ import { Context } from '../../Context'
 import { toTitleCase } from '../../utils'
 
 function Products() {
+    // import product from context 
     const {products} = useContext(Context)
+    // State to keep track if show all products or first 9 and hide the show more button
     const [showAll, setShowAll] = useState(false)
 
+    // Display the first 9 items of the product
     const productItems = products.map((item, index)=>{
         if(index <= 8){
             return(
@@ -22,6 +25,7 @@ function Products() {
         }
     })
 
+    // Display all the products once user clicks on see more 
     const productItemsAll = products.map((item, index)=>{
         return(
             <ProductItems

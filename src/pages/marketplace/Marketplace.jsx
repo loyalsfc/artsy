@@ -29,6 +29,8 @@ function ProductPage() {
                             <option value="">Sort By</option>
                         </select>
                     </div>
+                    
+                    {/* Check if the product array contain items, if yes display the product else display the skeleton loaders  */}
                     {products.length ? <Products/> : <SkeletonLoader />}
                 </main>
             </div>

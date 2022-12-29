@@ -8,6 +8,7 @@ import drops from './drops'
 
 function Drop() {
 
+    // Map through drop items 
     const dropItems = drops.map(item=> {
         return(
             <DropItem

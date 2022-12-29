@@ -41,10 +41,11 @@ function CartShippingDetails() {
     }
 
     useEffect(()=>{
+        // Page transition when component mount 
         let timeout = setTimeout(() => {
             cartItems.current.classList.replace('w-full', 'w-1/2')
             timeout = setTimeout(() => {
-                checkoutForm.current.classList.replace('w-0', 'w-1/2')
+                checkoutForm.current.classList.replace('md:w-0', 'md:w-1/2')
             }, 500);
           }, 100);
           return () => clearTimeout(timeout);
@@ -59,7 +60,7 @@ function CartShippingDetails() {
                 <button className='cart-btn'>Payment details</button>
             </div>
             <main className='flex gap-16 justify-end'>
-                <form ref={checkoutForm} onSubmit={handleSubmit} className="w-0 grow-0 overflow-hidden">
+                <form ref={checkoutForm} onSubmit={handleSubmit} className="w-full md:w-0  grow-0 overflow-hidden">
                     <InputWrapper>
                         <label htmlFor="email">Your email</label>
                         <input 

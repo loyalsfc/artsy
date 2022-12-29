@@ -7,12 +7,16 @@ function Header() {
     const mobileNav = useRef()
 
     const switchActive = (id) => {
+        // Setting active navigation menu 
         document.querySelectorAll('.nav-items li').forEach(item => {
+            // remove active from all navigations 
             item.classList.remove('active')
         })
+        // Set active to the clicked item 
         document.getElementById(id).classList.add('active')
     }
 
+    // Showing or hide navigation for mobile 
     const toggleNav = () => {
         mobileNav.current.classList.toggle('w-0')
     }

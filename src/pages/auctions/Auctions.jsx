@@ -1,23 +1,35 @@
-import React, {useContext, useRef, useState} from 'react'
+import React, {useContext, useEffect, useRef, useState} from 'react'
 import { Link } from 'react-router-dom'
 import AuctionProduct from './AuctionProduct'
 import TopBids from './TopBids'
 import { toTitleCase } from '../../utils'
 import bids from './bids'
-import { Context } from '../../Context'
 import Transitions from '../../components/transition/Transition'
 import Livebid from '../livebid/Livebid'
+import { Context } from '../../Context'
 
 function Auctions() {
-    const {auctionProduct} = useContext(Context)
+    const {url} = useContext(Context)
+    const [auctionProduct, setAuctionProduct] = useState([])
     const [bidItems, setBidItems] = useState(bids)
     const [showLiveBid, setShowLiveBid] = useState({status: false, id: ""})
     const scrollContainer = useRef()
 
+    useEffect(()=>{
+        // fetch autions from endpoint 
+        fetch(`${url}auction.json`)
+        .then(result => result.json())
+        .then(data => {
+            setAuctionProduct(data.products)
+        })
+    },[])
+
+    // Functions to scroll forward on mobile 
     function scrollForward(){
         scrollContainer.current.scrollLeft += 200;
     }
 
+    // Function to scroll back on mobile 
     function scrollReverse(){
         scrollContainer.current.scrollLeft -= 200;
     }
@@ -34,12 +46,14 @@ function Auctions() {
         )
     })
 
+    // function to display the livebid popup and set the livebid id
     function liveBidding(id){
         setShowLiveBid(prevItem => {
             return {status: !prevItem.status, id: id}
         })
     }
 
+    // Function to close livebid popup 
     function closeLiveBid(){
         setShowLiveBid(prevItem => {
             return {...prevItem, status: !prevItem.status}
@@ -63,6 +77,7 @@ function Auctions() {
         )
     })
 
+    // Toggle favorite on and off 
     function toggleFavorite(id){
         setBidItems(
             bidItems.map(item => {

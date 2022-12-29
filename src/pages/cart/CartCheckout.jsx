@@ -8,19 +8,21 @@ import Modal from '../../components/modal/Modal'
 
 
 function CartCheckout({hidden, width}) {
-    const shippingDetails = useRef()
     const [modalIsOpen, setModalIsOpen] = useState(false)
     const {cart, setCart} = useContext(Context)
     const [totalPrice, setTotalPrice] = useState(0)
     const [deleteId, setDeleteId ]= useState('')
 
     useEffect(()=>{
+        //Set the totalprice to zero
         setTotalPrice(0)
+        //Loop through all the items in and add the product of quantity and price to the previous price
         cart.forEach(item => {
             setTotalPrice(prevPrice => prevPrice + (item.price.usd * item.qty))
         })
     },[cart])
 
+    //Map all cart items to display them
     const productsInCart = cart.map(item => {
         return(
             <CartItem
@@ -39,47 +41,59 @@ function CartCheckout({hidden, width}) {
         )
     })
 
+    // Toggle modal once delete is clicked and set the deleteId
     async function removeCart(id){
         setModalIsOpen(!modalIsOpen)
         setDeleteId(id)
     }
 
+    //Increasing the quantity of cart item
     function increaseQty(id){
         setCart(
             cart.map(item => {
+                // check if the id match and add to the quantity onclick 
                 if(item.id == id){
                     return {
                         ...item,
                         qty: item.qty + 1,
                     }
                 }
+                //Otherwise just return the item
                 return item
             })
         )
     }
     
+    //Decreasing the quantity of cart item
     function decreaseQty(id){
         if(cart.length <= 1) return
         setCart(
             cart.map(item => {
+                // check if the id match  
                 if(item.id == id){
+                    //If the qty is return the item
                     if(item.qty <= 1){
                         return item
                     } else {
+                        //Otherwise, reduce the quantity by one
                         return {
                             ...item,
                             qty: item.qty - 1,
                         }
                     }
                 }
+                //Otherwise return the item
                 return item
             })
         )
     }
 
     const confirmCartRemove = () => {
+        // Once delete is confirm, filter out the item with deleteId from the carts array
         setCart(cart.filter(item => item.id != deleteId))
+        //Show successful toast message
         toast("Product Removed Successfully!", {type: 'success', className: 'w-full'})
+        //setmodal open to false
         setModalIsOpen(false)
     }
 
@@ -107,9 +121,6 @@ function CartCheckout({hidden, width}) {
                 <button className='rounded-full '>Scheduled</button>
             </div>
             <main className='flex gap-8 justify-end'>
-                <div ref={shippingDetails} className='overflow-hidden w-0'>
-                    {/* <CartShippingDetails /> */}
-                </div>
                 <div className='transition-all shrink-0 w-full'>
                     <section className='mb-8'>
                         {productsInCart}

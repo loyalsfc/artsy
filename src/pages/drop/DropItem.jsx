@@ -6,6 +6,8 @@ function DropItem({img, title, creator, status, time}) {
     const [linkText, setLinkText] = useState('View')
 
     useEffect(()=>{
+
+        // set link text and view color based on drop status 
         if(status == "upcoming"){
             setColor('bg-blue')
             setLinkText('Get notified')
