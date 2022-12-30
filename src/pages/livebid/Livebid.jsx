@@ -1,13 +1,9 @@
-import React, { useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { Context } from '../../Context'
 
 import Bidders from './Bidders'
 
-function Livebid({prodId, handleClick}) {
+function Livebid({prodId, handleClick, auctionProduct}) {
     const {productId} = useParams()
-    const {auctionProduct} = useContext(Context)
-
     const currentBid = auctionProduct.find(item => item.id == prodId)
 
     return (

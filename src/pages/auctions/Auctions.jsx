@@ -92,7 +92,7 @@ function Auctions() {
         return (
             <Transitions>
                 {showLiveBid.status && <div className='fixed top-0 left-0 w-full h-screen bg-white overflow-scroll z-50'>
-                    <Livebid prodId={showLiveBid.id} handleClick={closeLiveBid}/>
+                    <Livebid auctionProduct={auctionProduct} prodId={showLiveBid.id} handleClick={closeLiveBid}/>
                 </div>}
                 <div className="container mx-auto pb-16">
                     <div className="max-w-[1064px] mx-auto  px-4 md:px-0">
