@@ -175,8 +175,8 @@
   }
 }
 .item:nth-child(odd) img{
-  animation: slideInFromLeft 1s ease-in-out ;
+  animation: slideInFromLeft 0.7s ease-in-out ;
 }
 .item:nth-child(even) img{
-  animation: slideInFromRight 1s ease-in-out ;
+  animation: slideInFromRight 0.7s ease-in-out ;
 }

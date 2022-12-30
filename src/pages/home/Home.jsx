@@ -11,6 +11,7 @@ import HeroMobile from './HeroMobile'
 import Newsletter from '../../components/newsletter/Newsletter'
 import Footer from '../../components/footer/Footer'
 import Transitions from '../../components/transition/Transition'
+import { Link } from 'react-router-dom'
 
 function Home() {
     return (
@@ -54,8 +55,8 @@ function Home() {
                                 </div>
                             </article>
                             <div className='ml-auto mt-4 md:mt-0 text-sm md:text-2xl'>
-                                <span className='underline mr-[20px] mb-3.5'>See more</span>
-                                <button className='border rounded-[10px] px-3.5 py-[14px]'>Set a reminder</button>
+                                <Link to="/auctions"><span className='underline mr-[20px] mb-3.5'>See more</span></Link>
+                                <Link to="/drop"><button className='border rounded-[10px] px-3.5 py-[14px]'>Set a reminder</button></Link>
                             </div>
                         </div>
                         <div className='flex items-center justify-between mt-[21px] hidden md:flex'>
