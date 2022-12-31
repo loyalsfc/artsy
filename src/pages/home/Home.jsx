@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from './Hero'
 import Featured from './Featured'
-
+import image from  '../../assets/upcoming-image.jpg'
 import featured1 from '../../assets/featured/Featured-product-1.png'
 import featured2 from '../../assets/featured/Featured-product-2.png'
 import featured3 from '../../assets/featured/Featured-product-3.png'
@@ -14,6 +14,13 @@ import Transitions from '../../components/transition/Transition'
 import { Link } from 'react-router-dom'
 
 function Home() {
+    const styles = {
+        background: `linear-gradient(0deg, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)), linear-gradient(104.57deg, rgba(0, 0, 0, 0) 21.03%, rgba(0, 0, 0, 0.2) 56.5%, rgba(0, 0, 0, 0.2) 93.84%), url('${image}')`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+    }
+
     return (
     <Transitions>
         <div>
@@ -45,10 +52,11 @@ function Home() {
                 <section className='gradient mb-[100px] md:mb-[190px]'>
                     <div className="container mx-auto p-[25px] md:px-0">
                         <h2 className='hidden md:block text-[2.5rem] mb-[38px] font-medium leading-[120%] underline text-white underline-offset-[17px] decoration-[0.8px]'>See Upcoming Auctions and Exhibitions</h2>
-                        <div className='h-[347px] md:h-[556px] image-bg text-white p-4 md:px-8 md:pb-[52px] flex flex-col lg:flex-row lg:items-end justify-end'>
+                        <div style={styles} className='h-[350px] image-bg md:h-[556px] text-white p-4 md:px-8 md:pb-[52px] flex flex-col lg:flex-row lg:items-end justify-end relative overflow-hidden'>
                             <article className='lg:w-3/5 flex items-center'>
                                 <h2 className='font-bellefair text-[2.5rem] md:text-[77px] text-[#E1E1E1] mr-5'>01</h2>
-                                <div className=''>
+                                <div className='relative'>
+                                    <div className='h-4 w-4 bg-[#F5F5F5] rounded-full absolute top-1 -left-6'></div>
                                     <h3 className='text-xl md:text-[29px] font-bellefair leading-[120%] md:max-w-[353px]'>MONALISA REDEFINED IN STYLE.</h3>
                                     <p className='text-xs md:text-[13.64px] leading-[20px] font-poppin mt-4 mb-3'>Start on : 08:00 GTS . Monday </p>
                                     <p className='text-[10px] md:text-base font-medium tracking-[0.065em]'>GET EXCLUSIVE VIEWING OF CONTEMPORARY ART AND CONNECT WITH INVESTORS AND AUCTIONEERS ACROSS THE WORLD BRINGING THEIR HIGHEST AND LOWEST BIDS.</p>

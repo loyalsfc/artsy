@@ -24,7 +24,7 @@ function Featured({img}) {
             <article className='lg:w-1/2 flex flex-col justify-between text-grey lg:mr-[50px]'>
                 <h4 className='text-[30px] md:text-[2.5rem] font-semibold w-full text-center lg:text-left lg:font-bold font-clash lg:font-stix absolute text-white lg:text-grey absolute top-12 md:top-20 lg:relative lg:top-0'>The Boolean Egyptian</h4>
                 <p className='text-[15px] md:text-xl mr-9 lg:mr-0 text-[#616161] lg:text-grey my-4 lg:my-0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor pur</p>
-                <div className='flex items-center px-4 lg:px-0'>
+                <div className='flex items-center'>
                     <div className='mr-[15px]'>
                         <EllipseImage
                             img={eclipse1}
