@@ -1,11 +1,12 @@
 import { toTitleCase } from '../../utils'
+import { Link } from 'react-router-dom'
 
 function CartItem({img, name, creator, size, price, qty, handleClick, id, increaseQty, decreaseQty}) {
 
     return (
         <div className='md:border-t-[0.3px] border-t-[#747474] last:border-b-[#747474] md:last:border-b-[0.3px]  py-6 flex gap-5 md:gap-8'>
             <div className="h-[7.875rem] md:h-[10rem] shrink-0 w-[7.8125rem] md:w-[11rem] overflow-hidden">
-                <img src={img} alt="" className='w-full '/>
+                <Link to={`/marketplace/${id}`} ><img src={img} alt="" className='w-full '/></Link>
             </div>
             <div className='flex flex-col justify-between'>
                 <span className='text-grey-dark text-xl'>{toTitleCase(name)}</span>
@@ -28,4 +29,4 @@ function CartItem({img, name, creator, size, price, qty, handleClick, id, increa
     )
 }
 
-export default CartItem
+export default CartItem 

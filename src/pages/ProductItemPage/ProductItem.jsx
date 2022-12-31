@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Context } from '../../Context'
 import Recommended from './Recommended'
-import { toTitleCase, toggleContent } from '../../utils'
+import { toTitleCase } from '../../utils'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import SwiperItem from '../../components/swiper/Swiper'
@@ -19,6 +19,7 @@ function ProductItem() {
     const openProduct = products.find(item => item.id == productId)
 
     useState(()=>{
+        console.log('ran')
         // check whether the product is in cart already and disable the button 
         if(cart.some(item => item.id == productId)){
             setDisableButton(true)
@@ -74,13 +75,13 @@ function ProductItem() {
             <div className="container mx-auto px-4 md:px-0 pb-20 md:mb-0">
                 <div className="max-w-[1064px] mx-auto">
                     <section className='font-medium md:leading-[200%] mb-8 md:mb-10 border-b-[0.5px] md:border-b-0 border-b-grey leading-[52px]'>
-                        <span className='text-[#BCB7B7]'>Home/ Marketplace/ Editorial/</span>
+                        <span className='text-[#BCB7B7]'><Link to="/">Home/</Link> <Link to="marketplace">Marketplace/</Link> Editorial/</span>
                         <span className='text-black'>{openProduct && toTitleCase(openProduct.name)}</span>
                     </section>
 
                     <main className='md:border flex-col md:flex-row border-grey flex text-grey leading-[97%]'>
                         <div className='md:w-2/5 shrink-0 md:border-r border-r-grey md:py-5 md:px-3'>
-                            <img src={openProduct && openProduct.url} alt="" />
+                            <img src={openProduct && openProduct.url} alt="" className='w-full'/>
                         </div>
                         <div className='w-full flex flex-col'>
                             <div className='flex md:border-b border-b-grey md:px-5 pt-4 md:py-3 justify-between items-center'>
@@ -103,7 +104,7 @@ function ProductItem() {
                                         <button onClick={()=> setQty(prevValue => prevValue+1)} className='ml-3'>+</button>
                                     </div>
                                     <div className='flex'>
-                                        <button disabled={disableButton ? true : false} id='add-to-cart' onClick={handleClick} data-id={`${openProduct && openProduct.id}`} className='bg-blue disabled:bg-blue/[0.5] rounded-[3px] px-8 h-[3.5rem] flex items-center text-white font-medium'>
+                                        <button disabled={disableButton ? true : false} id='add-to-cart' onClick={handleClick} data-id={`${openProduct && openProduct.id}`} className='bg-blue disabled:bg-blue/[0.5] rounded-[3px] px-6 md:px-8 h-[3.5rem] flex items-center text-white font-medium'>
                                             <span>Add to Cart</span>
                                             <svg width="42" height="34" viewBox="0 0 42 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path fillRule="evenodd" clipRule="evenodd" d="M10 16.7403C10 16.5417 10.079 16.3512 10.2197 16.2108C10.3603 16.0703 10.5511 15.9914 10.75 15.9914H28.4395L23.719 11.2799C23.5782 11.1393 23.4991 10.9486 23.4991 10.7498C23.4991 10.5509 23.5782 10.3602 23.719 10.2196C23.8598 10.079 24.0508 10 24.25 10C24.4492 10 24.6402 10.079 24.781 10.2196L30.781 16.2101C30.8508 16.2797 30.9063 16.3623 30.9441 16.4533C30.9819 16.5442 31.0013 16.6418 31.0013 16.7403C31.0013 16.8388 30.9819 16.9363 30.9441 17.0273C30.9063 17.1182 30.8508 17.2009 30.781 17.2704L24.781 23.2609C24.6402 23.4015 24.4492 23.4805 24.25 23.4805C24.0508 23.4805 23.8598 23.4015 23.719 23.2609C23.5782 23.1203 23.4991 22.9296 23.4991 22.7308C23.4991 22.5319 23.5782 22.3412 23.719 22.2006L28.4395 17.4891H10.75C10.5511 17.4891 10.3603 17.4102 10.2197 17.2697C10.079 17.1293 10 16.9389 10 16.7403Z" fill="#F5F4F4"/>
@@ -116,13 +117,13 @@ function ProductItem() {
                                         </button>
                                     </div>
                             </div>
-                            <div className="px-5 mt-auto py-5 md:py-6 border-y border-y-grey">
+                            <div className="px-2 md:px-5 mt-auto py-5 md:py-6 border-y border-y-grey">
                                 <ProductSubs title="Description" content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim, iste at dignissimos commodi deserunt accusamus similique accusantium voluptates pariatur? Dolorum odit suscipit cupiditate maxime quos odio ipsum dolores porro cumque?"/>
                             </div>
-                            <div className="px-5 py-5 md:py-6 border-b border-b-grey">
+                            <div className="px-2 md:px-5 py-5 md:py-6 border-b border-b-grey">
                                 <ProductSubs title="Listing" content="Lorem ipsum dolor sit, amet consectetur adipisicing elit."/>
                             </div>
-                            <div className="px-5 py-5 md:py-6 border-b border-b-grey md:border-b-0">
+                            <div className="px-2 md:px-5 py-5 md:py-6 border-b border-b-grey md:border-b-0">
                             <ProductSubs title="Status" content="Lorem ipsum dolor sit, dolorum odit suscipit cupiditate maxime quos odio ipsum dolores porro cumque?"/>
                             </div>
                         </div>
