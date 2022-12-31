@@ -55,7 +55,7 @@ function Featured({img}) {
 
 function EllipseImage({img}){
     return(
-        <div className='h-[42px] md:h-[51px] w-[42px] md:w-[51px] inline-block border border-[#78A3AD] rounded-full -ml-[21px]'> 
+        <div className='h-[42px] md:h-[51px] w-[42px] md:w-[51px] inline-block border border-[#78A3AD] rounded-full -ml-[21px] first:ml-0'> 
             <img src={img} alt="Ellipse Image" />
         </div>
     )
